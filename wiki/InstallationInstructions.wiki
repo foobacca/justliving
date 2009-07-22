@@ -1,0 +1,13 @@
+#summary Installation instructions for the Just Living codebase.
+#labels Phase-Deploy
+
+= Requirements =
+
+  * MySQL (Developed on version 3.23.58)
+  * PHP (Developed on version 4.3.7)
+
+= Method =
+
+
+
+= Optional Software =
