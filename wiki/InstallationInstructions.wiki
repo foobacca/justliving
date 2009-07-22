@@ -12,6 +12,6 @@
 
 = Optional Software =
 
-* PhpMyAdmin
-* PmWiki
-* AwStats
+   * PhpMyAdmin
+   * PmWiki
+   * AwStats
