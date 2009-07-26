@@ -12,7 +12,7 @@
     * by command line $ svn co ...
     * by tortoisesvn
   * copy config.php.sample to config.php and edit as appropriate
-  * move funcs.php to somewhere on the server outside of the public html path, and change the phpinc file to point to it.
+  * move funcs.php to somewhere on the server outside of the public html path, and change the path in the config.php file to point to it.
   * set up the database tables
   * start adding content :)
 
