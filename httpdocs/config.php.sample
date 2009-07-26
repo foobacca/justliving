@@ -1,0 +1,6 @@
+<?php
+# EDITME: make this path point to your copy of the funcs.php file
+include("/home/httpd/vhosts/justliving.org.uk/phpincs/funcs.php");
+
+# TODO: add variables - database connection details, city ...
+?>

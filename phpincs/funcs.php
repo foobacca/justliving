@@ -1,7 +1,7 @@
 <?php
+
 // Always connect to DB
-$db = mysql_connect("localhost", "justliving", "f98v83bnu2cw");
-mysql_select_db("justliving",$db);
+include("dbconn.php");
 
 // Always run this to kill any form spam
 if ($_REQUEST){foreach($_REQUEST as $key=>$val){if(eregi("MIME-Version: ",$val)){die('Get out.');}}}
