@@ -1,0 +1,226 @@
+body	{
+	margin: 20px;
+	padding: 0;
+	background: #fff;
+	font: 100% Verdana, sans-serif; 
+	color: #333;
+	}
+#container {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	padding: 0;
+	margin: 0;
+}
+h1 img {
+	border: none;
+	margin: 10px 0 10px 20px;
+}
+h1 a, h1 a:hover, h1 a:active {
+	border: none;
+}
+a {
+	color: #3366FF;
+}
+a:visited  {
+	color: #3366FF;
+}
+a:hover, a:active  {
+	color: #B13C0F;
+}
+#navlist {
+	display: none;
+}
+#page {
+	padding: 0 20px;
+	margin: 0;
+}
+#page #rightcol {
+	padding: 0 0 0 3%;
+	margin: 10px 0 0 3%;
+	width: 30%;
+	float: right;
+	border-left: 1px dotted #B13C0F;
+}
+div#adminlink {
+	display: none;
+}
+#page h2 {
+	margin: 0 0 0.4em 0;
+	padding: 0;
+	font: 1.8em Georgia, Times, serif;
+	letter-spacing: 2px;
+}
+#page h3 {
+	margin: 0 0 15px 0;
+	padding: 20px 0 4px 0;
+	font: 1.4em Georgia, Times, serif;
+	letter-spacing: 2px;
+	border-bottom: 1px dashed #333;
+}
+#page p {
+	letter-spacing: 0.01em;
+	padding: 0; 
+	margin: 0 0 0.9em 0;
+	font-size: 0.744em;
+	line-height: 1.5em;
+}
+#page p.intro {
+	font-style: italic;
+	font-family: Georgia, Times, serif;
+	line-height: 1.4em;
+	letter-spacing: 1px;
+}
+img {
+	border: none;
+}
+img.left {
+	float: left;
+	border: none;
+	margin: 0;
+	padding: 0 15px 10px 10px;
+}
+img.right {
+	float: right;
+	border: none;
+	margin: 0;
+	padding: 0 15px 10px 10px;
+}
+#page ul {
+	margin: 0 0 10px 20px;
+	padding: 10px 0 0 0;
+	line-height: 1.5em;
+}
+#page li {
+	padding: 4px 0 4px 20px;
+	margin: 0;
+	list-style: none;
+	background: url("/imgs/li.gif") left 6px no-repeat;
+	line-height: 1.5em;
+	font-size: 0.8em;
+}
+#page li.space {
+	margin-top: 5px;
+}
+span.date {
+  	text-transform: uppercase; 
+  	letter-spacing: 0.33em;
+	font-size: 0.7em;
+}
+div.clear {
+	clear: both;
+}
+div.clearleft {
+	clear: left;
+}
+#list {
+	padding-top: 10px;
+}
+#list div.listing {
+	border: 1px solid black;
+	padding-top: 10px;
+	padding: 10px 40px 10px 10px;
+	margin: 0 0 15px 0;
+}
+#list h3 {
+	margin: 0 0 5px 0;
+	padding: 0;
+	border: none;
+}
+#list h4 {
+	margin: 0 0 5px 0;
+	padding: 0;
+}
+#list .meta {
+	font-size: 0.7em;
+	font-family: verdana;
+}
+#list p {
+	margin: 0 0 0.4em 10px;	
+}
+#list p.infoline {
+	margin: 0 0 0.2em 10px;	
+}
+#list p.infoline strong {
+	position: absolute;
+}
+#list p.infoline span {
+	padding-left: 9em;
+}
+#list p.meta {
+	text-transform: uppercase; 
+  	letter-spacing: 0.11em;
+	font-size: 0.6em;
+}
+div.description {
+	margin-top: 10px;
+	border: none;
+}
+#list p.metalist {
+	padding: 10px 0 0 0;
+	text-transform: uppercase; 
+  	letter-spacing: 0.11em;
+	font-size: 0.6em;
+}
+div.comment {
+	border: 1px solid #333;
+	background: #fff url("/imgs/strip_un.gif") top right no-repeat;
+	padding: 10px 40px 10px 10px;
+	margin: 0 0 15px 0;
+}
+td, th {
+	letter-spacing: 0.01em;
+	padding: 4px; 
+	margin: 0;
+	font-size: 0.744em;
+	line-height: 1.5em;
+}
+form {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+fieldset {
+	border: 1px solid #333;
+	margin: 40px 0 1em 0;
+	padding: 30px;
+}
+legend {
+	font-weight: bold;
+	padding: 0 5px 0 5px;
+	font: 1.4em Georgia, Times, serif;
+	letter-spacing: 2px;
+	margin: 0 0 12px 0;
+}
+label {
+	width: 30%;
+	margin: 0 0 3px 0;
+	padding: 0 10px 4px 4px;
+	float: left;
+	font: 0.9em Georgia, Times, serif;
+	letter-spacing: 2px;
+	border-bottom: 1px dashed #333;
+}
+label.noline {
+	border-bottom: none;
+}
+input, textarea, select {
+	font: 1.2em Georgia, Times, serif;
+	margin: 0 0 10px 5px;
+	line-height: 1.5em;
+	padding: 2px;
+}
+input.but {
+	padding: 2px;
+	font: 1em Verdana, sans-serif; 
+	background: #3366FF;
+	margin: 0 0 0 32%;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	border: 1px solid black;
+	color: white;
+}
+
+
