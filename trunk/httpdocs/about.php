@@ -1,5 +1,5 @@
 <?php
-include("/home/httpd/vhosts/justliving.org.uk/phpincs/funcs.php");
+@(include("config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
 topbit(5);
 ?>
 
