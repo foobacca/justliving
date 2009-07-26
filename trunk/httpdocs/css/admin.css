@@ -1,0 +1,139 @@
+body	{
+	margin: 20px;
+	padding: 0;
+	color: #333;
+	font: 80% "Trebuchet MS", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;
+	background: #fff;
+	}
+	
+/* Links */
+a {
+	font-weight : bold; 
+	color: #3366FF;
+	background: transparent; 
+}
+a:hover {
+	color: #B13C0F;
+}
+
+h1 {
+	margin: 0 0 20px 0;
+	padding: 10px;
+	background: #eee;
+}
+
+h2 {
+	margin: 20px 0 6px 10px;
+	padding: 0;
+	border-bottom: 2px solid #ccc;
+}
+
+h3 {
+	margin: 20px 0 6px 10px;
+	padding: 0;
+}
+
+p {
+	margin: 0 0 10px 10px;
+	padding: 0;
+}
+small {
+	font-family: verdana;
+	font-size: 0.9em;
+}
+.bolder {
+	background: #333;
+	color: #fff;
+	padding: 2px;
+}
+
+/* LISTS */
+
+li {
+	margin: 6px;
+}
+	
+/* FORMS */
+form {
+	border: 0;
+	padding: 0;
+	margin: 10px 0 10px 0;
+}
+fieldset {
+	padding: 10px;
+	margin: 10px 0 30px 0;
+	background: #eee;
+}
+legend {
+	font-weight: bold;
+	padding: 2px 5px 2px 5px;	
+	font-size: 1.2em;
+	letter-spacing: 1px;
+	background: white;
+	border: 1px solid black;
+}
+label {
+	display: block;
+	font-size: 1em;
+
+	padding: 4px 0 4px 0;
+	letter-spacing: 1px;
+}
+input, textarea, select {
+	font: small "Lucida Grande", "Trebuchet MS", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;
+	padding: 2px;
+}
+input.submit {
+	margin: 10px;
+	padding: 2px;
+	border: 1px #3366FF solid;
+	background: #fff;
+	color: #3366FF;
+	font-weight: bold;
+}
+input.checkbox, input.radio {
+	display: inline; 
+}
+p.checkbox {
+	margin: 0;
+	padding: 0;
+}
+.mandatory {
+	background: lightyellow;
+}
+
+/* Tables */
+table {
+	border-collapse: collapse;
+	border: 1px solid black;
+	margin: 20px 0 0 10px;
+	padding: 0;
+}
+tr {
+	margin: 0 0 1px 0;
+}
+th {
+	text-align: left;
+	padding: 8px;
+	vertical-align: top;
+	border: 1px solid black;
+	background: #eee;
+}
+td {
+	text-align: left;
+	padding: 8px;
+	vertical-align: top;
+	border: 1px solid black;
+}
+td a {
+	display: block;
+}
+
+/* Sortable tables */
+table.sortable a.sortheader {
+    background-color:#eee;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+	 text-transform: uppercase;
+}

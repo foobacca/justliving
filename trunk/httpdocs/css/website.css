@@ -1,0 +1,396 @@
+/* ---------------------------------- */
+/* LARGE STRUCTURE STUFF */
+/* ---------------------------------- */
+
+/* Links */
+a {
+	color: #0040FF;
+}
+a:visited  {
+	color: #0040FF;
+}
+a:hover, a:active  {
+	color: #B13C0F;
+}
+
+/* Admin link */
+.adminlink {
+	margin: 30px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	/*background: #fff url(/imgs/globe.gif) no-repeat bottom right;*/
+	background: #f9f6ea;
+	font: 100% Verdana, sans-serif; 
+	color: #000;
+	}
+
+/* Topbar, including logo, nav + search */
+#topbar {
+	margin: 0;
+	width: 100%;
+	padding: 0;
+	background: #ffd940;
+}
+
+/* Page */
+#page {
+	padding: 20px;
+	margin: 0;
+}
+
+/* Right column, for 'new stuff' on homepage */
+#page #rightcol {
+	padding: 0;
+	margin: 0 0 0 5%;
+	width: 25%;
+	float: right;
+}
+
+
+
+
+
+
+
+/* NEW GUIDE STUFF */
+
+div.guideindexbox {
+	width: 70%;
+	margin: 20px 0 0 0;
+	padding: 0;
+	background:  #ffd940 url(/imgs/guide-couple.gif) no-repeat bottom right;
+	border: 1px solid #000;
+}
+table.guideindex {
+	width: 95%;
+	margin: 0;
+	padding: 0;
+}
+table.guideindex tr, table.guideindex td {
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+}
+table.guideindex td.large {
+	font-size: 1.1em;
+}
+
+table.guideindex ul {
+	margin: 0 20px 10px 20px;
+	padding: 10px 0 0 0;
+	line-height: 1.5em;
+}
+
+/* OLDER GUIDE BITS */
+
+span.date {
+  	text-transform: uppercase; 
+  	letter-spacing: 0.33em;
+	font-size: 0.744em;
+}
+
+#list {
+	padding-top: 10px;
+}
+
+.listing {
+	border: 1px solid black;
+	padding: 10px 40px 10px 10px;
+	margin: 0 0 15px 0;
+	background: #fff;
+}
+.block_link {
+	display:block; 
+	background:#FFF;
+	text-decoration: none;
+} 
+.block_link:hover {
+	background:#EEE;
+	} 
+		
+#page #list h3 {
+	margin: 0 0 5px 0;
+	padding: 0;
+	border: none;
+}
+#list h4 {
+	margin: 0 0 5px 0;
+	padding: 0;
+}
+#list .meta {
+	font-size: 0.7em;
+	font-family: verdana;
+}
+#list p {
+	margin: 0 0 0.4em 10px;	
+}
+#list p.infoline {
+	margin: 0 0 0.2em 10px;	
+}
+#list p.infoline strong {
+	position: absolute;
+}
+#list p.infoline span {
+	padding-left: 9em;
+}
+#list p.meta {
+	text-transform: uppercase; 
+  	letter-spacing: 0.11em;
+	font-size: 0.6em;
+}
+div.description {
+	margin-top: 10px;
+	border: none;
+}
+div.metalist {
+	padding: 10px 0 0 0;
+	text-transform: uppercase; 
+  	letter-spacing: 0.1em;
+	font-size: 0.5em;
+	color: #666;
+	text-align: center;
+}
+div.comment {
+	border: 1px solid #333;
+	background: #fff url("/imgs/strip_un.gif") top right no-repeat;
+	padding: 10px 40px 10px 10px;
+	margin: 0 0 15px 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* Headers */
+#page h2 {
+	margin: 0.1em 0 0.3em 0;
+	padding: 0;
+	font: 1.8em Georgia, Times, serif;
+	letter-spacing: 2px;
+}
+#page h3 {
+	margin: 0 0 4px 0;
+	padding: 16px 0 0 0;
+	font: 1.4em Georgia, Times, serif;
+	letter-spacing: 2px;
+}
+
+
+/* Paragraphs */
+.center {
+	text-align: center;
+}
+#page p {
+	letter-spacing: 0.01em;
+	padding: 0; 
+	margin: 0 0 0.9em 0;
+	font-size: 0.744em;
+	line-height: 1.4em;
+}
+#page p.small {
+	font: 0.7em Verdana;
+}
+#page p.intro {
+	font-style: italic;
+	font-family: Georgia, Times, serif;
+	letter-spacing: 1px;
+}
+
+
+/* Images */
+img {
+	border: none;
+}
+img.news {
+	float: left;
+	border: 1px solid black;
+	margin: 0 20px 20px 0;
+	padding: 0;
+}
+img.left {
+	float: left;
+	border: none;
+	margin: 0;
+	padding: 0 15px 10px 10px;
+}
+img.right {
+	float: right;
+	border: none;
+	margin: 0;
+	padding: 0 15px 10px 10px;
+}
+
+
+/* Lists */
+#page ul {
+	margin: 0 0 10px 20px;
+	padding: 10px 0 0 0;
+	line-height: 1.5em;
+}
+#page li {
+	padding: 4px 0 4px 20px;
+	margin: 0;
+	list-style: none;
+	background: url("/imgs/li-new.gif") left 6px no-repeat;
+	line-height: 1.5em;
+	font-size: 0.8em;
+}
+#page li.space {
+	margin-top: 5px;
+}
+
+
+/* Clears */
+div.clear {
+	clear: both;
+}
+div.clearleft {
+	clear: left;
+}
+
+
+
+
+
+/* Forms */
+form {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+fieldset {
+	border: 1px solid #333;
+	margin: 40px 0 1em 0;
+	padding: 30px;
+}
+legend {
+	font-weight: bold;
+	padding: 0 5px 0 5px;
+	font: 1.4em Georgia, Times, serif;
+	letter-spacing: 2px;
+	margin: 0 0 12px 0;
+}
+label {
+	width: 30%;
+	margin: 0 0 3px 0;
+	padding: 0 10px 4px 4px;
+	float: left;
+	font: 0.9em Georgia, Times, serif;
+	letter-spacing: 2px;
+	border-bottom: 1px dashed #333;
+}
+label.noline {
+	border-bottom: none;
+}
+input, textarea, select {
+	font: 1.2em Georgia, Times, serif;
+	margin: 0 0 10px 5px;
+	line-height: 1.5em;
+	padding: 2px;
+}
+input.but {
+	padding: 2px;
+	font: 1em Verdana, sans-serif; 
+	background: #3366FF;
+	margin: 0 0 0 32%;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	border: 1px solid black;
+	color: white;
+}
+
+
+/* Special for hiding form elements, used for spam prevention */
+p.special {
+	display: none;
+}
+
+
+/* ------------------------------------------- */
+/* STANDARD BITS ON EVERY PAGE */
+/* ------------------------------------------- */
+ 
+/* Submit listings button / link */
+a.submit {
+	padding: 4px 0.5em;
+	margin: 0 0 0 3px;
+	border: 1px solid #000;
+	background: #0040FF;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+	color: white;
+}
+a:hover.submit, a:active.submit {
+	color: #fdf8d9;
+	background: #B13C0F;
+	border-color: #227;
+}
+
+/* Navigation bar */
+#navlist {
+	padding: 3px 0 4px 10px;
+	margin: 0;
+	font-size: 0.8em;
+	border-bottom: 1px solid #000;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+}
+#navlist li {
+	list-style: none;
+	margin: 0;
+	display: inline;
+}
+#navlist li a {
+	padding: 4px 0.5em;
+	margin: 0 0 0 3px;
+	border: 1px solid #000;
+	background: #0040FF;
+	text-decoration: none;
+}
+#navlist li a:link, #navlist li a:visited {
+	color: #fdf8d9;
+}
+#navlist li a:hover {
+	color: #fdf8d9;
+	background: #B13C0F;
+	border-color: #227;
+}
+#navlist li a#current {
+	background: #f9f6ea;
+	border-bottom: 1px solid #f9f6ea;
+	color: black;
+}
+
+/* Logo */
+h1 {
+	padding: 0;
+	margin: 0;
+}
+h1 img {
+	border: none;
+	margin: 10px 0 5px 15px;
+}
+h1 a, h1 a:hover, h1 a:active {
+	border: none;
+}
+
+/* Search in top bar */
+#search {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	padding: 0;
+	font-size: 0.7em;
+}
