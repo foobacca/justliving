@@ -1,1 +1,7 @@
-To be done.
+First copy the funcs.php to somewhere outside of the apache root - ie somewhere where it can't be loaded directly by a web browser.
+
+Then copy the config.php.sample to be config.php and edit the file. You will need to set the path of the funcs.php file, and look through the rest of the file for things you might need to edit.
+
+To be done:
+
+database set up
