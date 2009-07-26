@@ -8,9 +8,7 @@
 
 = Method =
 
-  * Checkout the code  
-    * by command line $ svn co ...
-    * by tortoisesvn
+  * [http://code.google.com/p/justliving/source/checkout Checkout the code] (see [http://stackoverflow.com/questions/41766/how-do-i-download-code-using-svn-tortoise-from-google-code these instructions] for using tortoisesvn
   * copy config.php.sample to config.php and edit as appropriate
   * move funcs.php to somewhere on the server outside of the public html path, and change the path in the config.php file to point to it.
   * set up the database tables
