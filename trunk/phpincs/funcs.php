@@ -1,7 +1,7 @@
 <?php
 
 // Always connect to DB
-include("dbconn.php");
+@(include("dbconn.php")) OR die("Could not find dbconn.php. Make sure you have copied dbconn.php.sample to dbconn.php");
 
 // Always run this to kill any form spam
 if ($_REQUEST){foreach($_REQUEST as $key=>$val){if(eregi("MIME-Version: ",$val)){die('Get out.');}}}
