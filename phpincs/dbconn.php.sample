@@ -1,5 +1,5 @@
 <?php
 // EDITME: change this to fit your database
-$db = mysql_connect("localhost", "justliving", "password");
-mysql_select_db("justliving",$db);
+$db = mysql_connect("localhost", "justliving", "password") or die(mysql_error());
+mysql_select_db("justliving",$db) or die(mysql_error());
 ?>
