@@ -1,6 +1,8 @@
 #summary Installation instructions for the Just Living codebase.
 #labels Phase-Deploy
 
+If using a new ubuntu install, see UbuntuInstallation .
+
 = Requirements =
 
   * MySQL (Developed on version 3.23.58)
