@@ -12,7 +12,9 @@ First install the required packages:
 $ sudo aptitude install apache2 php5 libapache2-mod-php5 mysql-server mysql-client php5-mysql subversion
 }}}
 
-You will be asked to set the root password for mysql. After this command, you should create the justliving database in mysql. _This should eventually be replaced by a script._
+You will be asked to set the root password for mysql. After this command, you should create the justliving database in mysql. 
+
+_This should eventually be replaced by a script._
 
 {{{
 $ mysql -u root -p
@@ -21,3 +23,25 @@ mysql> create database justliving;
 mysql> grant all privileges on justliving.* to 'justliving'@'localhost' identified by 'password';
 mysql> quit
 }}}
+
+Next download the justliving code. For this example we'll use the home directory - /home/user - and link to it from the web root (/var/www)
+
+{{{
+$ cd
+$ svn checkout http://justliving.googlecode.com/svn/trunk/ justliving
+$ cd /var/www/
+$ sudo ln -s /home/user/justliving/httpdocs justliving
+}}}
+
+Then we need to set up some sample files to be the real files.
+
+{{{
+$ cd ~/justliving/
+$ cp httpdocs/config.php.sample httpdocs/config.php
+$ cp httpdocs/css/website.css.sample httpdocs/css/website.css
+$ cp phpincs/dbconn.php.sample phpincs/dbconn.php
+}}}
+
+You should then edit those 3 files as necessary. The most important is phpincs/dbconn.php where you will have to set your database password.
+
+You should then be able to go to your web browser and enter http://localhost/justliving/ and see the site :) (or http://yoursite.com/justliving/ if the web browser is not on the same computer as the web server).
