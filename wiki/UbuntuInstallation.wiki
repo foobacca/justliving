@@ -1,0 +1,23 @@
+#summary How to install the justliving code on Ubuntu
+
+= Introduction =
+
+This guide is for how to set up the justliving code on Ubuntu. This is based on Ubuntu 8.04 (Hardy) but should work on any later version. It starts from a fresh install.
+
+= Details =
+
+First install the required packages:
+
+{{{
+$ sudo aptitude install apache2 php5 libapache2-mod-php5 mysql-server mysql-client php5-mysql subversion
+}}}
+
+You will be asked to set the root password for mysql. After this command, you should create the justliving database in mysql. _This should eventually be replaced by a script._
+
+{{{
+$ mysql -u root -p
+Enter password:
+mysql> create database justliving;
+mysql> grant all privileges on justliving.* to 'justliving'@'localhost' identified by 'password';
+mysql> quit
+}}}
