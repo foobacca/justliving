@@ -1,6 +1,6 @@
 <?php
 @(include("../config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
-atopbit($app_path, );
+atopbit();
 ?>
 <h1>Just Living Admin</h1>
 
