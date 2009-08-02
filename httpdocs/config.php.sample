@@ -1,4 +1,11 @@
 <?php
+# uncomment the next line if you want to make tracking down errors easier
+#error_reporting(E_ALL | E_STRICT);
+
+# TODO: add variables - database connection details, city ...
+
+# EDITME: css path
+$css_path = '/css';
 
 # EDITME: make this path point to your copy of the funcs.php file
 $funcs_include_path = '/home/httpd/vhosts/justliving.org.uk/phpincs/';
@@ -7,5 +14,4 @@ set_include_path(get_include_path() . PATH_SEPARATOR . $funcs_include_path);
 @(include($funcs_include_path . "funcs.php")) OR
   die ("Could not find funcs.php. Make sure you have set the path of funcs.php in config.php");
 
-# TODO: add variables - database connection details, city ...
 ?>
