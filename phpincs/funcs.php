@@ -11,9 +11,9 @@ header("Content-Type: text/html; charset=UTF-8");
 
 // Prints the topbit of the page
 function topbit($n = false, $page_title = "Just Living - A proper positive guide to Cambridge")
-  # use these globals
-  global $app_path;
 	{
+          # use these globals
+          global $app_path;
 	?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -60,6 +60,7 @@ function topbit($n = false, $page_title = "Just Living - A proper positive guide
 // Prints the botbit of the page
 function botbit()
 	{
+          global $app_path;
 	?>
 <div class="clear"></div>
 </div>
@@ -91,8 +92,8 @@ function botbit()
 
 // Prints the guide index
 function guide_index()
-  global $app_path;
 	{
+          global $app_path;
 	?>
 
 <div class="guideindexbox">
@@ -396,8 +397,8 @@ function remove_extra_linebreaks($string)
 
 // Topbit
 function atopbit()
-  global $app_path;
 	{
+          global $app_path;
 	?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
