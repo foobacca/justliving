@@ -1,6 +1,6 @@
 <?php
 @(include("config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
-topbit($css_path, 4);
+topbit($app_path, 4);
 ?>
 
 <h2>Get involved in Just Living</h2>

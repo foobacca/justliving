@@ -1,6 +1,6 @@
 <?php
 @(include("config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
-topbit($css_path, 5);
+topbit($app_path, 5);
 ?>
 
 <div id="rightcol">
