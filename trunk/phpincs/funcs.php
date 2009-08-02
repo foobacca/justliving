@@ -10,7 +10,7 @@ if ($_REQUEST){foreach($_REQUEST as $key=>$val){if(eregi("MIME-Version: ",$val))
 header("Content-Type: text/html; charset=UTF-8");
 
 // Prints the topbit of the page
-function topbit($css_path = '/css', $n = false, $page_title = "Just Living - A proper positive guide to Cambridge")
+function topbit($app_path = '/css', $n = false, $page_title = "Just Living - A proper positive guide to Cambridge")
 	{
 	?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -19,8 +19,8 @@ function topbit($css_path = '/css', $n = false, $page_title = "Just Living - A p
 <title><?php print($page_title); ?></title>
 <meta name="description" content="<?php print($page_title); ?>" />
 <meta name="keywords" content="Cambridge ethical just living guide green environment community volunteering activism food tourism resources" />
-<link rel="stylesheet" type="text/css" href="<?php print $css_path; ?>/print.css" media="print" />
-<style type="text/css" media="all">@import "<?php print $css_path; ?>/website.css";</style>
+<link rel="stylesheet" type="text/css" href="<?php print $app_path; ?>/print.css" media="print" />
+<style type="text/css" media="all">@import "<?php print $app_path; ?>/website.css";</style>
 </head>
 <body>
 
@@ -392,14 +392,14 @@ function remove_extra_linebreaks($string)
 
 
 // Topbit
-function atopbit($css_path = '/css')
+function atopbit($app_path = '/css')
 	{
 	?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <title>Just Living Admin</title>
-<style type="text/css" media="all">@import "<?php print $css_path; ?>/admin.css";</style>
+<style type="text/css" media="all">@import "<?php print $app_path; ?>/admin.css";</style>
 <script src="/js/sorttable.js"></script>
 </head>
 <body>

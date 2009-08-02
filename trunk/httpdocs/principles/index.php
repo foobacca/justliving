@@ -1,6 +1,6 @@
 <?php
 @(include("../config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
-topbit($css_path, 8);
+topbit($app_path, 8);
 ?>
 
 <h2>What's a Proper Positive guide?</h2>

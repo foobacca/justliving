@@ -1,6 +1,6 @@
 <?php
 @(include("../../config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
-atopbit($css_path, );
+atopbit($app_path, );
 
 $result = mysql_query("SELECT email, id FROM `listings` WHERE email != '' AND email IS NOT NULL ");
 
