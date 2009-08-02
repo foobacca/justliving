@@ -10,7 +10,9 @@ if ($_REQUEST){foreach($_REQUEST as $key=>$val){if(eregi("MIME-Version: ",$val))
 header("Content-Type: text/html; charset=UTF-8");
 
 // Prints the topbit of the page
-function topbit($app_path = '/css', $n = false, $page_title = "Just Living - A proper positive guide to Cambridge")
+function topbit($n = false, $page_title = "Just Living - A proper positive guide to Cambridge")
+  # use these globals
+  global $app_path;
 	{
 	?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -19,8 +21,8 @@ function topbit($app_path = '/css', $n = false, $page_title = "Just Living - A p
 <title><?php print($page_title); ?></title>
 <meta name="description" content="<?php print($page_title); ?>" />
 <meta name="keywords" content="Cambridge ethical just living guide green environment community volunteering activism food tourism resources" />
-<link rel="stylesheet" type="text/css" href="<?php print $app_path; ?>/print.css" media="print" />
-<style type="text/css" media="all">@import "<?php print $app_path; ?>/website.css";</style>
+<link rel="stylesheet" type="text/css" href="<?php print $app_path; ?>css/print.css" media="print" />
+<style type="text/css" media="all">@import "<?php print $app_path; ?>css/website.css";</style>
 </head>
 <body>
 
@@ -35,17 +37,17 @@ function topbit($app_path = '/css', $n = false, $page_title = "Just Living - A p
 </div>
 </form>
 
-<h1><a href="/"><img src="/imgs/JL_logo.gif" alt="Just Living" width="293" height="60" /></a></h1>
+<h1><a href="<?php print $app_path; ?>"><img src="<?php print $app_path; ?>imgs/JL_logo.gif" alt="Just Living" width="293" height="60" /></a></h1>
 
 <div id="navcontainer">
 <ul id="navlist">
-<li><a href="/" <?php if ($n == 2) {print("id=\"current\""); } ?>>View Guide</a></li>
-<li><a href="/stockists/" <?php if ($n == 10) {print("id=\"current\""); } ?>>Stockists</a></li>
-<li><a href="/about.php" <?php if ($n == 5) {print("id=\"current\""); } ?>>About</a></li>
-<li><a href="/principles/" <?php if ($n == 8) {print("id=\"current\""); } ?>>Principles</a></li>
-<li><a href="/resources/" <?php if ($n == 7) {print("id=\"current\""); } ?>>Resources</a></li>
-<li><a href="/getinvolved.php" <?php if ($n == 4) {print("id=\"current\""); } ?>>Get Involved</a></li>
-<li><a href="/contact.php" <?php if ($n == 6) {print("id=\"current\""); } ?>>Contact</a></li>
+<li><a href="<?php print $app_path; ?>" <?php if ($n == 2) {print("id=\"current\""); } ?>>View Guide</a></li>
+<li><a href="<?php print $app_path; ?>stockists/" <?php if ($n == 10) {print("id=\"current\""); } ?>>Stockists</a></li>
+<li><a href="<?php print $app_path; ?>about.php" <?php if ($n == 5) {print("id=\"current\""); } ?>>About</a></li>
+<li><a href="<?php print $app_path; ?>principles/" <?php if ($n == 8) {print("id=\"current\""); } ?>>Principles</a></li>
+<li><a href="<?php print $app_path; ?>resources/" <?php if ($n == 7) {print("id=\"current\""); } ?>>Resources</a></li>
+<li><a href="<?php print $app_path; ?>getinvolved.php" <?php if ($n == 4) {print("id=\"current\""); } ?>>Get Involved</a></li>
+<li><a href="<?php print $app_path; ?>contact.php" <?php if ($n == 6) {print("id=\"current\""); } ?>>Contact</a></li>
 </ul>
 </div>
 
@@ -74,7 +76,7 @@ function botbit()
 </div>
 </form>
 
-<p class="center adminlink"><a href="/admin/" id="adminlink"><img src="/imgs/admin.gif" alt="Just Living Admin" width="20" height="20" /></a></p>
+<p class="center adminlink"><a href="<?php print $app_path; ?>admin/" id="adminlink"><img src="<?php print $app_path; ?>imgs/admin.gif" alt="Just Living Admin" width="20" height="20" /></a></p>
 
 <p>&nbsp;</p>
 
@@ -89,6 +91,7 @@ function botbit()
 
 // Prints the guide index
 function guide_index()
+  global $app_path;
 	{
 	?>
 
@@ -108,7 +111,7 @@ if ($myrow = mysql_fetch_array($result))
 		if ($nummyrow = mysql_fetch_array($numresult)) 
 			{
 			$number = mysql_num_rows(mysql_query($sql)); 
-			print("<li><strong><a href=\"/guide/list.php?cat_id=" . $myrow["id"] . "\">" . $myrow["name"] . "</a></strong> ($number)");
+			print("<li><strong><a href=\"" . $app_path . "guide/list.php?cat_id=" . $myrow["id"] . "\">" . $myrow["name"] . "</a></strong> ($number)");
 			print("</li>\n");
 			}
 		// If it's transport, then start another cell
@@ -123,11 +126,11 @@ if ($myrow = mysql_fetch_array($result))
 </td></tr>
 <tr><td>
 <ul>
-<li><a href="/guide/listings_index.php">All listings</a></li>
-<li><a href="/guide/list.php?recent=true">Latest additions</a></li>
+<li><a href="<?php print $app_path; ?>guide/listings_index.php">All listings</a></li>
+<li><a href="<?php print $app_path; ?>guide/list.php?recent=true">Latest additions</a></li>
 </ul>
 </td><td>
-<p style="margin: 24px 0 0 34px;"><a href="/guide/submit.php" class="submit">Submit listing</a></p>
+<p style="margin: 24px 0 0 34px;"><a href="<?php print $app_path; ?>guide/submit.php" class="submit">Submit listing</a></p>
 </td></tr></table>
 </div>
 
@@ -392,7 +395,8 @@ function remove_extra_linebreaks($string)
 
 
 // Topbit
-function atopbit($app_path = '/css')
+function atopbit()
+  global $app_path;
 	{
 	?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -400,7 +404,7 @@ function atopbit($app_path = '/css')
 <head>
 <title>Just Living Admin</title>
 <style type="text/css" media="all">@import "<?php print $app_path; ?>/admin.css";</style>
-<script src="/js/sorttable.js"></script>
+          <script src="<?php print $app_path; ?>js/sorttable.js"></script>
 </head>
 <body>
 	<?php
