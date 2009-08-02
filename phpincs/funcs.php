@@ -273,7 +273,10 @@ function clean_text($text)
 	}
 	
 // Works with bbcode text, but returns a 300 char abstract 
-function abstract($text)
+// edited to rename to create_abstract - in php5 abstract is a reserved keyword
+// cannot find it used elsewhere in the code though, so maybe we should just
+// get rid of it? Hamish 2/8/09
+function create_abstract($text)
 	{
 	if ($text)
 		{
