@@ -44,4 +44,13 @@ $ cp phpincs/dbconn.php.sample phpincs/dbconn.php
 
 You should then edit those 3 files as necessary. The most important is phpincs/dbconn.php where you will have to set your database password.
 
+You also need to create the initial database.
+
+{{{
+$ cd ~/justliving/
+$ mysql -p -u justliving justliving < other/dbcreate.sql
+}}}
+
+This (currently) creates all the tables, and puts initial values into the categories and flags tables.
+
 You should then be able to go to your web browser and enter http://localhost/justliving/ and see the site :) (or http://yoursite.com/justliving/ if the web browser is not on the same computer as the web server).
