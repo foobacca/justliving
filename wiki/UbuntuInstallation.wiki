@@ -39,6 +39,7 @@ Then we need to set up some sample files to be the real files.
 $ cd ~/justliving/
 $ cp httpdocs/config.php.sample httpdocs/config.php
 $ cp httpdocs/css/website.css.sample httpdocs/css/website.css
+$ cp httpdocs/stockists/index.php.sample httpdocs/stockists/index.php
 $ cp phpincs/dbconn.php.sample phpincs/dbconn.php
 }}}
 
