@@ -373,11 +373,16 @@ function superhtmlentities($text)
 // Only used in submit listing + addition for sending emails to JL admin
 function send_jl_mail($email, $subject, $msg)
 	{
-	$msg = $msg . "\n\n--\nJust Living - An Ethical Guide to Cambridge\nWebsite: http://www.justliving.org.uk\nWiki: http://wiki.justliving.org.uk";
-	$headers = "From: automail@justliving.org.uk\r\n";
-	$headers .= "Reply-To: automail@justliving.org.uk\r\n";
-	$headers .= "Return-Path: automail@justliving.org.uk\r\n";
-	mail($email, stripslashes($subject), stripslashes(remove_extra_linebreaks($msg)), $headers) or die("Mail not sent");
+          global $wiki_in_use;
+          global $wiki_url;
+
+          $msg = $msg . "\n\n--\nJust Living - An Ethical Guide to Cambridge\nWebsite: http://www.justliving.org.uk";
+          if ($wiki_in_use) 
+            $msg = $msg . "\nWiki: $wiki_url";
+          $headers = "From: automail@justliving.org.uk\r\n";
+          $headers .= "Reply-To: automail@justliving.org.uk\r\n";
+          $headers .= "Return-Path: automail@justliving.org.uk\r\n";
+          mail($email, stripslashes($subject), stripslashes(remove_extra_linebreaks($msg)), $headers) or die("Mail not sent");
 	}
 	
 // Removes double line breaks for when sending form to email
