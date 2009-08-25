@@ -2,9 +2,9 @@
 @(include("../config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
 atopbit();
 ?>
-<h1><a href="/admin/">Just Living Admin</a> &gt; Help</h1>
+<h1><a href="/admin/"><?php print $guide_name; ?> Admin</a> &gt; Help</h1>
 
-<h2>Help with Just Living Admin</h2>
+<h2>Help with <?php print $guide_name; ?> Admin</h2>
 
 <h3>HTML Form Input</h3>
 <p>The description of a listing allows HTML tags to use for formatting. Learning HTML is pretty easy, here's some of the basics...</p>

@@ -9,7 +9,7 @@
 		#mapPopup{ width: 200px; height: 200px;  }
 		#MapListings{ float: right; background-color: #DEE3FA; border: 1px dashed #0000FF; width: 300px; font-size: 80%; font-weight: bold; }
 	</style>
-    <title>Cambridge Just Living Map</title>
+    <title><?php print $city; ?> <?php print $guide_name; ?> Map</title>
 
  <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAAx318I-0IdMwWPU03dTSJPxQkEh_EwjoIWpcUCzprmsMXDsvezhRx3NhMyM-YmE4F895m7ZL8WqnwgA" type="text/javascript"></script>   
     <script type="text/javascript">
@@ -173,7 +173,7 @@ function focusMarker( index )
 	</head>
 	<body onload="handleData();" onunload="GUnload()">
 		<div id="container">
-		<h1><a href="/"><img src="/imgs/happyface.gif" alt="Just Living - An Ethical Guide to Cambridge" width="316" height="87" /></a></h1>
+		<h1><a href="/"><img src="/imgs/happyface.gif" alt="<?php print $guide_name; ?> - An Ethical Guide to <?php print $city; ?>" width="316" height="87" /></a></h1>
 		<div id="MapListings">&nbsp;</div>
 		<div id="page">
 			<div id="map"></div>

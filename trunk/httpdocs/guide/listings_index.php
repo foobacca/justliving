@@ -1,6 +1,6 @@
 <?php
 @(include("../config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
-topbit(2, "Just Living - Listings Index");
+topbit(2, "$guide_name - Listings Index");
 
 print("<h2>Listings Index</h2>");
 $sql = "SELECT id, org_name, email, website, phone FROM listings WHERE (state = 'justliving' OR state = 'signed off') ORDER BY org_name";

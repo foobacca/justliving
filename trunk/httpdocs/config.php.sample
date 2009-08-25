@@ -12,22 +12,28 @@
 #$app_path = '/justliving/';
 $app_path = '/';
 
-# EDITME: css path
+# css path
 $css_path = '/css';
 
-# EDITME: is wiki in use, and what is the url
+# Various variables 
+$city = 'Cambridge';
+$guide_name = 'Just Living';
+$guide_subtitle = 'A proper positive guide to Cambridge';
+$default_page_title = "Just Living - A proper positive guide to Cambridge";
+
+# is wiki in use, and what is the url
 $wiki_in_use = true;
 $wiki_url = 'http://wiki.justliving.org.uk/';
 
-# EDITME: is stats package in use, and what is the url
+# is stats package in use, and what is the url
 $stats_in_use = true;
 $stats_url = 'http://www.justliving.org.uk/admin/phpMyAdmin/';
 
-# EDITME: is database admin in use, and what is the url
+# is database admin in use, and what is the url
 $db_admin_in_use = true;
 $db_admin_url = 'http://www.justliving.org.uk/admin/stats.php';
 
-# EDITME: make this path point to your copy of the funcs.php file
+# make this path point to your copy of the funcs.php file
 $funcs_include_path = '/home/httpd/vhosts/justliving.org.uk/phpincs/';
 set_include_path(get_include_path() . PATH_SEPARATOR . $funcs_include_path);
 

@@ -65,7 +65,7 @@ if ($submit)
 		// Set Vars
 		$sendtoemail="organise@justliving.org.uk";
 		$replyemail="server@justliving.org.uk";
-		$thesubject="Just Living - New Listing";
+		$thesubject="$guide_name - New Listing";
 		
 		// Headers
 		$headers = "From: $replyemail\r\n";
@@ -73,7 +73,7 @@ if ($submit)
 		$headers .= "Return-Path: $replyemail\r\n";
 		
 		// Format the body of the email
-		$themessage = "A new listing has been added, check it out at:\nhttp://www.justliving.org.uk/admin/listings/edit.php?id=$id\n\nOrganisation Name: $org_name\nCategory: $cat\nDescription: $description\n\n---\nAutoMail from Just Living";
+		$themessage = "A new listing has been added, check it out at:\nhttp://www.justliving.org.uk/admin/listings/edit.php?id=$id\n\nOrganisation Name: $org_name\nCategory: $cat\nDescription: $description\n\n---\nAutoMail from $guide_name";
 		
 		// Send
 		if ($id)
@@ -88,9 +88,9 @@ if ($submit)
 
 	<h2>Listed submitted</h2>
 
-	<p><strong>Thanks for that, your listing details have now been sent to the Just Living team.</strong></p>
+	<p><strong>Thanks for that, your listing details have now been sent to the <?php print $guide_name; ?> team.</strong></p>
 	
-	<p>We're all volunteers here at Just Living, so in time one of us will get round to checking the details and possibly contacting the organisation in question to confirm details. If the organisation is right for our guide, we'll then publish it on our website and in our next printed version of the guide.</p>
+	<p>We're all volunteers here at <?php print $guide_name; ?>, so in time one of us will get round to checking the details and possibly contacting the organisation in question to confirm details. If the organisation is right for our guide, we'll then publish it on our website and in our next printed version of the guide.</p>
 
 	<p>If you have a photograph that you'd like to include with the listing, then please <a href="/contact.php">email us</a> the image.</p>
 
@@ -107,7 +107,7 @@ else
 	<h2>Submit a listing</h2>
 
 	<ul>
-	<li>If you know of something in Cambridge that should be listed in our guide then let us know.</li>
+	<li>If you know of something in <?php print $city; ?> that should be listed in our guide then let us know.</li>
 	<li>If you don't know much about an organisation, then just submit as much as you know.</li>
 	<li>We have some <a href="/principles/">guiding principles</a> as to what we think is suitable for this guide.</li>
 	<li>Your email address will not be public, we may use it to contact you about the listing.</li>
