@@ -410,7 +410,7 @@ function atopbit()
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <title>Just Living Admin</title>
-<style type="text/css" media="all">@import "<?php print $app_path; ?>/admin.css";</style>
+<style type="text/css" media="all">@import "<?php print $app_path; ?>css/admin.css";</style>
           <script src="<?php print $app_path; ?>js/sorttable.js"></script>
 </head>
 <body>
