@@ -48,6 +48,9 @@ if ($myrow = mysql_fetch_array($result))
 		} while ($myrow = mysql_fetch_array($result));
 	}	
 
+// for a new set up $latest won't be set, so we need to catch that
+if (isset($latest))
+{
 // Order latest array by date
 arsort($latest);
 
@@ -119,7 +122,7 @@ foreach ($latest as $key=>$value)
 	$n++;
 		
 	}
-
+}
 ?>
 </div>
 
