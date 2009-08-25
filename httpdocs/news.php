@@ -6,7 +6,7 @@ if (!$id)
 	{
 	?>
 
-	<h2>Just Living News</h2>
+	<h2><?php print $guide_name; ?> News</h2>
 	<p>Things move quickly sometimes, slower at others... Just what have we been up to?</p>
 
 	<ul>
@@ -33,7 +33,7 @@ else
 		print("<h2>" . $myrow["headline"] . "</h2>\n");
 		print("<p><strong><span class=\"date\">" . date("jS F Y",$myrow["date"]) . "</span></strong></p>");
 		print(autop($myrow["article"]));
-		print("<ul><li><a href=\"news.php\"><strong>Just Living News Archive</strong></a></li></ul>");
+		print("<ul><li><a href=\"news.php\"><strong><?php print $guide_name; ?> News Archive</strong></a></li></ul>");
 		}	
 	}
 

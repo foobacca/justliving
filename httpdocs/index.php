@@ -126,9 +126,9 @@ foreach ($latest as $key=>$value)
 ?>
 </div>
 
-<h2>A Proper Positive Guide to Cambridge</h2>
+<h2><?php print $guide_subtitle; ?></h2>
 
-<p class="intro" style="width: 70%">This is a directory of various socially responsible organisations in the Cambridge area, from shops to campaigning groups. We hope it's useful and of interest to newcomers and long-term residents alike.</p>
+<p class="intro" style="width: 70%">This is a directory of various socially responsible organisations in the <?php print $city; ?> area, from shops to campaigning groups. We hope it's useful and of interest to newcomers and long-term residents alike.</p>
 
 <?php
 guide_index();

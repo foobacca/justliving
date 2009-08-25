@@ -10,17 +10,19 @@ if ($_REQUEST){foreach($_REQUEST as $key=>$val){if(eregi("MIME-Version: ",$val))
 header("Content-Type: text/html; charset=UTF-8");
 
 // Prints the topbit of the page
-function topbit($n = false, $page_title = "Just Living - A proper positive guide to Cambridge")
+function topbit($n = false, $page_title = "")
 	{
           # use these globals
-          global $app_path;
+          global $app_path, $default_page_title, $city;
+          if (strcmp($page_title, "") == 0)
+            $page_title = $default_page_title;
 	?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <title><?php print($page_title); ?></title>
 <meta name="description" content="<?php print($page_title); ?>" />
-<meta name="keywords" content="Cambridge ethical just living guide green environment community volunteering activism food tourism resources" />
+<meta name="keywords" content="<?php print $city; ?> ethical just living guide green environment community volunteering activism food tourism resources" />
 <link rel="stylesheet" type="text/css" href="<?php print $app_path; ?>css/print.css" media="print" />
 <style type="text/css" media="all">@import "<?php print $app_path; ?>css/website.css";</style>
 </head>
@@ -373,10 +375,9 @@ function superhtmlentities($text)
 // Only used in submit listing + addition for sending emails to JL admin
 function send_jl_mail($email, $subject, $msg)
 	{
-          global $wiki_in_use;
-          global $wiki_url;
+          global $city, $wiki_in_use, $wiki_url;
 
-          $msg = $msg . "\n\n--\nJust Living - An Ethical Guide to Cambridge\nWebsite: http://www.justliving.org.uk";
+          $msg = $msg . "\n\n--\nJust Living - An Ethical Guide to $city\nWebsite: http://www.justliving.org.uk";
           if ($wiki_in_use) 
             $msg = $msg . "\nWiki: $wiki_url";
           $headers = "From: automail@justliving.org.uk\r\n";

@@ -3,9 +3,9 @@
 topbit(6);
 ?>
 
-<h2>Contact Just Living</h2>
+<h2>Contact <?php print $guide_name; ?></h2>
 
-<p>If you want to get involved in Just Living, have some feedback or just want to drop us a line, email <strong>info [at] justliving [dot] org [dot] uk</strong></p>
+<p>If you want to get involved in <?php print $guide_name; ?>, have some feedback or just want to drop us a line, email <strong>info [at] justliving [dot] org [dot] uk</strong></p>
 
 <p><strong>Note:</strong> Please use <a href="<?php print $app_path; ?>guide/submit.php">the correct page for submitting or suggesting listings</a>.</p>
 

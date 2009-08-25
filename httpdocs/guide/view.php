@@ -59,7 +59,7 @@ if (request("submit_comment","post"))
 		// Set Vars
 		$sendtoemail="organise@justliving.org.uk";
 		$replyemail="server@justliving.org.uk";
-		$thesubject="Just Living - New Addition to a Listing";
+		$thesubject="$guide_name - New Addition to a Listing";
 		
 		// Headers
 		$headers = "From: $replyemail\r\n";
@@ -67,7 +67,7 @@ if (request("submit_comment","post"))
 		$headers .= "Return-Path: $replyemail\r\n";
 		
 		// Format the body of the email
-		$themessage = "A new addition has been posted, check it out at:\nhttp://www.justliving.org.uk/admin/additions/edit.php?id=$id\n\nText: $comment\n$Submit Name: $submit_name\nSubmit Email: $submit_email\n\n---\nAutoMail from Just Living";
+		$themessage = "A new addition has been posted, check it out at:\nhttp://www.justliving.org.uk/admin/additions/edit.php?id=$id\n\nText: $comment\n$Submit Name: $submit_name\nSubmit Email: $submit_email\n\n---\nAutoMail from $guide_name";
 		
 		// Send
 		mail("$sendtoemail","$thesubject","$themessage","$headers");
@@ -77,7 +77,7 @@ if (request("submit_comment","post"))
 	// Message
 	?>
 	<h2>Information Added</h2>
-	<p>Your additional information has been sent to the Just Living team. One of us will check out the suggested changes to the listing and update it if necessary. Cheers.</p>
+	<p>Your additional information has been sent to the <?php print $guide_name; ?> team. One of us will check out the suggested changes to the listing and update it if necessary. Cheers.</p>
 	<ul>
 	<li><a href="view.php?id=<?php print($id); ?>&amp;cat=<?php print($cat); ?>">Back to the listing</a></li>
 	<li><a href="/">View guide index</a></li>
@@ -290,7 +290,7 @@ else
 	<li>If you think we're missing details or this listing is incorrect, please let us know.</li>
 	<li>Your email address will not be public, we may use it to contact you about the addition.</li>
 	<li>Mandatory fields are in bold and marked with an asterix*.</li>
-	<li><strong>Please note. You are about to contact the Just Living team NOT the organisation listed above.</strong></li>
+	<li><strong>Please note. You are about to contact the <?php print $guide_name; ?> team NOT the organisation listed above.</strong></li>
 	</ul>
 	
 	<p>

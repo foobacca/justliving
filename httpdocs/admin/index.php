@@ -2,7 +2,7 @@
 @(include("../config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
 atopbit();
 ?>
-<h1>Just Living Admin</h1>
+<h1><?php print $guide_name; ?> Admin</h1>
 
 <?php if ($wiki_in_use)  { ?>
 <h3 style="font-size: 1.4em;"><a href="<?php print $wiki_url; ?>">JL WIKI</a></h3>
@@ -16,7 +16,7 @@ if ($unchecked)
 	{
 	print("<span class=\"bolder\">$unchecked Unchecked</span>");
 	}
-?> Add, edit and delete listings in Just Living guide.</p>
+?> Add, edit and delete listings in <?php print $guide_name; ?> guide.</p>
 
 <h3><a href="additions/">Manage Additions</a></h3>
 <p><?php
@@ -32,7 +32,7 @@ if ($unchecked)
 <p>Edit the introduction text that is displayed for each category.</p>
 
 <h3><a href="news/">Manage News</a></h3>
-<p>Add, edit and delete news articles displayed on the Just Living website.</p>
+<p>Add, edit and delete news articles displayed on the <?php print $guide_name; ?> website.</p>
 
 <h3>Check Formatting</h3>
 <ul>

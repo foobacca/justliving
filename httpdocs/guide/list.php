@@ -12,7 +12,7 @@ if ($cat_id = request("cat_id","get"))
 		}
 		
 	// Topbit
-	topbit(2, "Just Living - " . $cat_name);
+	topbit(2, $guide_name ." - " . $cat_name);
 	
 	// Get all listing for a cat
 	$sql = "SELECT l.id, l.org_name, l.description FROM listings l, listings_categories lc WHERE l.id = lc.listing_id AND (l.state = 'justliving' OR l.state = 'signed off') AND lc.category_id = $cat_id ORDER BY l.org_name";
@@ -21,9 +21,9 @@ if ($cat_id = request("cat_id","get"))
 // Is it 'most recent' listing?
 elseif (request("recent","get"))
 	{
-	topbit(2, "Just Living - Recent Listings");
+	topbit(2, "$guide_name - Recent Listings");
 	$cat_name = "Recent Listings";
-	$cat_intro = "The latest 30 additions to the Just Living guide.";
+	$cat_intro = "The latest 30 additions to the $guide_name guide.";
 	// Get most recent
 	$sql = "SELECT id, org_name, add_ts, state, description FROM listings WHERE (state = 'justliving' OR state = 'signed off') ORDER BY add_ts DESC LIMIT 0,30";
 	}
@@ -31,7 +31,7 @@ elseif (request("recent","get"))
 // Is it an all listing?
 else
 	{
-	topbit(2, "All Just Living Listings");
+	topbit(2, "All $guide_name Listings");
 	// Get all
 	$sql = "SELECT id, org_name, add_ts, state, description FROM listings WHERE (state = 'justliving' OR state = 'signed off') ORDER BY org_name";
 	}

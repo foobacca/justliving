@@ -25,7 +25,7 @@ topbit(7);
 <li><a href="http://greenchoices.org/">Green Choices - UK guide to greener living</a></li>
 </ul>
 
-<h3>Just Living Print Editions</h3>
+<h3><?php print $guide_name; ?> Print Editions</h3>
 <ul>
 <li><a href="/guide/editions/JustLiving-Summer09.pdf"><strong>Summer '09</strong></a> (4mb PDF)<br />48 page A5 booklet.</li>
 <li><a href="/guide/editions/JL03-Winter06.pdf">Winter '06</a> (610kb PDF)<br />36 page A5 booklet.</li>
@@ -34,11 +34,11 @@ topbit(7);
 </ul>
 
 <!--
-<h3>Just Living Propaganda</h3>
-<p>We've got some useful bits and pieces to help you help us with Just Living.</p>
+<h3><?php print $guide_name; ?> Propaganda</h3>
+<p>We've got some useful bits and pieces to help you help us with <?php print $guide_name; ?>.</p>
 <ul>
-<li><a href="JL_A4_GlobePoster.pdf">Just Living A4 poster</a> (152kb PDF)</li>
-<li><a href="JL_A5_GlobeLeaflets.pdf">Just Living A5 leaflets</a> (96kb PDF)</li>
+<li><a href="JL_A4_GlobePoster.pdf"><?php print $guide_name; ?> A4 poster</a> (152kb PDF)</li>
+<li><a href="JL_A5_GlobeLeaflets.pdf"><?php print $guide_name; ?> A5 leaflets</a> (96kb PDF)</li>
 </ul>
 -->
 
