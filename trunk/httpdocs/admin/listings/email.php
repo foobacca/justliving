@@ -31,12 +31,12 @@ if ($myrow = mysql_fetch_array($result))
 	$sendtoemail = $myrow["email"];
 	
 	// Subject
-	$thesubject="Listing for '" . clean_text($myrow["org_name"])  . "' in socially responsible guide to Cambridge";
+	$thesubject="Listing for '" . clean_text($myrow["org_name"])  . "' in socially responsible guide to $city";
 
 	// Format the body of the email
 	$themessage = "Hi there,
 
-We're writing to let you know that your organisation has just been listed in \"Just Living\", a free volunteer-run guide to socially responsible organisations that are doing positive stuff in Cambridge - we think you're one of them!
+We're writing to let you know that your organisation has just been listed in \"Just Living\", a free volunteer-run guide to socially responsible organisations that are doing positive stuff in $city - we think you're one of them!
 
 Here's a copy of the details we currently have for you:
 
@@ -62,7 +62,7 @@ Also, if your organisation has a website and if it would be appropriate, you cou
 
 Please note - there's no obligation at all to answer or do any of this - you'll still be listed with us. All of this just helps us to help organisations like yours. We might chase you up at some point to check your details if we don't hear from you, because we want to make sure we've listed you accurately.
 
-We're doing this because we'd like to see more organisations working to create a positive society, and we want people to be aware of and support the ones that Cambridge has right now. We don't get paid for this, and we don't allow advertising in the guide.
+We're doing this because we'd like to see more organisations working to create a positive society, and we want people to be aware of and support the ones that $city has right now. We don't get paid for this, and we don't allow advertising in the guide.
 
 Just Living is available online for free at http://www.justliving.org.uk, and we're currently working on the next edition of a paper copy, which we make available for donations when we have them in stock.
 

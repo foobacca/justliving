@@ -30,14 +30,14 @@ if ($myrow = mysql_fetch_array($result))
 			// Set the to address and subject
 			$sendtoemail = $myrow["email"];
 			//$sendtoemail = "wheresmyhat@gmail.com"; // DEBUG
-			$thesubject="Listing for '" . clean_text($myrow["org_name"])  . "' in proper positive guide to Cambridge";
+			$thesubject="Listing for '" . clean_text($myrow["org_name"])  . "' in proper positive guide to $city";
 
 			// Format the body of the email
 			$themessage = "Hi there,
 
 Some of you may have received this before in which case hello again! - we'd really like to hear from you. We're aiming to publish our next printed guide within a couple of months, so we're keen on making sure all details are correct.
 
-We're writing to let you know that your organisation is currently listed in a publication called \"Just Living\", a free volunteer-run guide to socially responsible organisations that are doing positive stuff in Cambridge - we think you're one of them! 
+We're writing to let you know that your organisation is currently listed in a publication called \"Just Living\", a free volunteer-run guide to socially responsible organisations that are doing positive stuff in $city - we think you're one of them! 
 
 Here's a copy of the details we currently have for you:
 
@@ -62,7 +62,7 @@ We'd like to know:
 
 Please note - on the last two points there's no obligation at all, we'd just like to make as many people as possible aware of the organisations we list.
 
-We're doing this because we'd like to see more organisations working to create a positive society, and we want people to be aware of and support the ones that Cambridge has right now. We don't get paid for this, and we don't allow advertising in the guide. 
+We're doing this because we'd like to see more organisations working to create a positive society, and we want people to be aware of and support the ones that $city has right now. We don't get paid for this, and we don't allow advertising in the guide. 
 
 Just Living is available online for free at http://www.justliving.org.uk, and we're currently working on the next edition of a paper copy, which we make available for donations when we have them in stock.
 
