@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `introduction` text NOT NULL,
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM AUTO_INCREMENT=18 ;
+TRUNCATE TABLE `categories`;
 
 --
 -- Dumping data for table `categories`
@@ -72,6 +73,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `state` enum('notlive','unchecked','checked') NOT NULL default 'unchecked',
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM AUTO_INCREMENT=493 ;
+TRUNCATE TABLE `comments`;
 
 --
 -- removed data for comments
@@ -89,6 +91,7 @@ CREATE TABLE IF NOT EXISTS `flags` (
   `seq` mediumint(9) NOT NULL default '0',
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM AUTO_INCREMENT=8 ;
+TRUNCATE TABLE `flags`;
 
 --
 -- Dumping data for table `flags`
@@ -130,6 +133,7 @@ CREATE TABLE IF NOT EXISTS `listings` (
   `print_img` varchar(30) NOT NULL default '',
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM AUTO_INCREMENT=424 ;
+TRUNCATE TABLE `listings`;
 
 --
 -- Dumping data for table `listings`
@@ -148,6 +152,7 @@ CREATE TABLE IF NOT EXISTS `listings_categories` (
   `category_id` mediumint(8) NOT NULL default '0',
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM AUTO_INCREMENT=690 ;
+TRUNCATE TABLE `listings_categories`;
 
 --
 -- Dumping data for table `listings_categories`
@@ -166,6 +171,7 @@ CREATE TABLE IF NOT EXISTS `listings_flags` (
   `flag_id` mediumint(8) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM AUTO_INCREMENT=94 ;
+TRUNCATE TABLE `listings_flags`;
 
 --
 -- Dumping data for table `listings_flags`
@@ -185,6 +191,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   `article` text NOT NULL,
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM AUTO_INCREMENT=26 ;
+TRUNCATE TABLE `news`;
 
 --
 -- Dumping data for table `news`
