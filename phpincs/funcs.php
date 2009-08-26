@@ -145,6 +145,7 @@ function jl_cat_list($current_cat_id = false)
 	{
 	// Get the cats
 	$total = 0;
+        $s = "";
 	$result = mysql_query("SELECT id, name FROM categories ORDER BY seq");
 	if ($myrow = mysql_fetch_array($result)) 
 		{

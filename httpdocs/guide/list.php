@@ -61,7 +61,7 @@ if ($myrow = mysql_fetch_array($result))
 		{
 		print("<a href=\"view.php?id=" . $myrow["id"] . "&amp;cat=$cat_id\" class=\"block_link listing\">");
 		print("<h3 style=\"text-decoration: underline;\">" . clean_text($myrow["org_name"]) . "</h3>\n");
-		print("<p style=\"color: black; text-decoration: none;\">" . abstract($myrow["description"]) . "</p>\n");
+		print("<p style=\"color: black; text-decoration: none;\">" . create_abstract($myrow["description"]) . "</p>\n");
 		print("</a>\n\n");
 		} while ($myrow = mysql_fetch_array($result));
 	}
