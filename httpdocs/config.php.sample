@@ -33,6 +33,10 @@ $stats_url = 'http://www.justliving.org.uk/admin/phpMyAdmin/';
 $db_admin_in_use = true;
 $db_admin_url = 'http://www.justliving.org.uk/admin/stats.php';
 
+# set time zone - for full list see http://uk3.php.net/manual/en/timezones.php
+$time_zone = "Europe/London";
+date_default_timezone_set($time_zone);
+
 # make this path point to your copy of the funcs.php file
 $funcs_include_path = '/home/httpd/vhosts/justliving.org.uk/phpincs/';
 set_include_path(get_include_path() . PATH_SEPARATOR . $funcs_include_path);
