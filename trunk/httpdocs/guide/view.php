@@ -142,12 +142,13 @@ else
 	// Previous / next links
 	$sql = "SELECT l.id FROM listings l, listings_categories lc WHERE l.id = lc.listing_id AND (l.state = 'justliving' OR l.state = 'signed off') AND lc.category_id = $cat_id ORDER BY l.org_name";
 	$result = mysql_query($sql);
+        $pre_id = null;
 	if ($myrow = mysql_fetch_array($result)) 
 	{
 	do 
 		{
 		// If 'next' is true, then this is the one for the next link
-		if ($next)
+		if (isset($next) && $next)
 			{
 			$next_id = $myrow["id"];
 			$next = false;
@@ -167,7 +168,7 @@ else
 
 	// Build the next / previous string
 	$nextprev = ("<p class=\"center\">");
-	if ($prev_id)
+	if (isset($prev_id) && $prev_id)
 		{
 		$nextprev .= ("<a href=\"view.php?id=$prev_id&amp;cat=$cat_id\">&lt;&lt; Previous</a>");
 		}
@@ -175,8 +176,8 @@ else
 		{
 		$nextprev .= ("&lt;&lt; Previous");
 		}
-	$nextprev .= (" | <a href=\"/\">Guide Index</a> | ");
-	if ($next_id)
+	$nextprev .= (" | <a href=\"$app_path\">Guide Index</a> | ");
+	if (isset($next_id) && $next_id)
 		{
 		$nextprev .= ("<a href=\"view.php?id=$next_id&amp;cat=$cat_id\">Next &gt;&gt;</a>");
 		}
