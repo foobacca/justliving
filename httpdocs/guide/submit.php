@@ -23,7 +23,7 @@ if ($submit)
 	if (!$org_name OR !$description)
 		{
 		print("<h2>ERROR</h2>");
-		print("<p>You must complete 'organisation name' and 'descrition of activities' fields to be able to submit a listing.</p><p><a href=\"javascript:history.back();\">Back to the form and try again</a>.</p>");
+		print("<p>You must complete 'organisation name' and 'description of activities' fields to be able to submit a listing.</p><p><a href=\"javascript:history.back();\">Back to the form and try again</a>.</p>");
 		botbit();
 		die();
 		}
@@ -86,7 +86,7 @@ if ($submit)
 		
 	?>
 
-	<h2>Listed submitted</h2>
+	<h2>Listing submitted</h2>
 
 	<p><strong>Thanks for that, your listing details have now been sent to the <?php print $guide_name; ?> team.</strong></p>
 	
