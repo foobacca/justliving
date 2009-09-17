@@ -45,13 +45,15 @@ $ cp phpincs/dbconn.php.sample phpincs/dbconn.php
 
 You should then edit those 3 files as necessary. The most important is phpincs/dbconn.php where you will have to set your database password.
 
-You also need to create the initial database.
+You also need to create the initial database. Note there are 3 files in other/
+
+* dbcreate-base.sql creates the tables in the database but leaves them empty, apart from the flags table which has standard values. It will delete all existing data in the tables.
+* dbcreate-categories.sql creates the tables in the database but leaves them empty, apart from the flags table (as above) and the categories table has the categories from the Cambridge site. It will delete all pre-existing data in the tables.
+* dbcreate-base.sql creates the tables in the database and puts lots of data in so you can play with the website properly. The email addresses and other personal info is made up. It will delete all pre-existing data in the tables.
 
 {{{
 $ cd ~/justliving/
-$ mysql -p -u justliving justliving < other/dbcreate.sql
+$ mysql -p -u justliving justliving < other/dbcreate-sample.sql
 }}}
-
-This (currently) creates all the tables, and puts initial values into the categories and flags tables.
 
 You should then be able to go to your web browser and enter http://localhost/justliving/ and see the site :) (or http://yoursite.com/justliving/ if the web browser is not on the same computer as the web server).
