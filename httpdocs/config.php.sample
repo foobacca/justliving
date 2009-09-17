@@ -2,8 +2,6 @@
 # uncomment the next line if you want to make tracking down errors easier
 #error_reporting(E_ALL | E_STRICT);
 
-# TODO: add variables - database connection details, city ...
-
 # EDITME: application path - MAKE SURE YOU END WITH A /
 # this is the path relative to the domain name. If you are the main app - ie 
 # the index page is at http://domain-name.org/index.php then this should be
@@ -38,6 +36,9 @@ $time_zone = "Europe/London";
 date_default_timezone_set($time_zone);
 
 # make this path point to your copy of the funcs.php file
+#
+# note this is a file system path as the included files should not be directly 
+# accesssible through the web, hence looking different to the other paths.
 $funcs_include_path = '/home/httpd/vhosts/justliving.org.uk/phpincs/';
 set_include_path(get_include_path() . PATH_SEPARATOR . $funcs_include_path);
 
