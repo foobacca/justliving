@@ -60,6 +60,8 @@ You should then be able to go to your web browser and enter http://localhost/jus
 
 = To Do = 
 
+How to CustomiseYourSite.
+
  * how to set up passwords for the admin section (apache config)
  * setting up the site with multiple domains
 
