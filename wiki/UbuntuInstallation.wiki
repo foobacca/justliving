@@ -58,6 +58,9 @@ $ mysql -p -u justliving justliving < other/dbcreate-sample.sql
 
 You should then be able to go to your web browser and enter http://localhost/justliving/ and see the site :) (or http://yoursite.com/justliving/ if the web browser is not on the same computer as the web server).
 
-= ToDo = 
+= To Do = 
 
  * how to set up passwords for the admin section (apache config)
+ * setting up the site with multiple domains
+
+Basically just need to find good guides on the web and link to them.
