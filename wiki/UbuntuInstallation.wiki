@@ -47,9 +47,9 @@ You should then edit those 3 files as necessary. The most important is phpincs/d
 
 You also need to create the initial database. Note there are 3 files in other/
 
-* dbcreate-base.sql creates the tables in the database but leaves them empty, apart from the flags table which has standard values. It will delete all existing data in the tables.
-* dbcreate-categories.sql creates the tables in the database but leaves them empty, apart from the flags table (as above) and the categories table has the categories from the Cambridge site. It will delete all pre-existing data in the tables.
-* dbcreate-base.sql creates the tables in the database and puts lots of data in so you can play with the website properly. The email addresses and other personal info is made up. It will delete all pre-existing data in the tables.
+ * dbcreate-base.sql creates the tables in the database but leaves them empty, apart from the flags table which has standard values. It will delete all existing data in the tables.
+ * dbcreate-categories.sql creates the tables in the database but leaves them empty, apart from the flags table (as above) and the categories table has the categories from the Cambridge site. It will delete all pre-existing data in the tables.
+ * dbcreate-base.sql creates the tables in the database and puts lots of data in so you can play with the website properly. The email addresses and other personal info is made up. It will delete all pre-existing data in the tables.
 
 {{{
 $ cd ~/justliving/
