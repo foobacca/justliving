@@ -1,0 +1,24 @@
+#summary The steps required to customise your site.
+
+Once you've played with the code, you'll want to make the site yours.
+
+== First steps - config.php ==
+
+ Start with the config.php file and put in your city name ...
+
+domain name
+
+== Look and feel - the CSS and logos ==
+
+_The below needs to checked_
+
+JL_Logo.gif is used in the "topbar" div element which appears on every page (I think!).
+
+guide-couple.gif is used on the root page, in the bottom right corner of the listings
+box.
+
+admin.gif appears on every page at the bottom (link to the admin section)
+
+== Anything else ==
+
+?
