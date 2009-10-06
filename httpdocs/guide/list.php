@@ -40,7 +40,7 @@ else
 print("<h2 class=\"center\">$cat_name</h2>\n");
 
 // If we've got an 'introduction', print it...
-if ($cat_intro)
+if (isset($cat_intro))
 	{
 	print("<p class=\"intro center\">" . nl2br($cat_intro) . "</p>\n");
 	}
