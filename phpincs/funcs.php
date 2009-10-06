@@ -175,22 +175,28 @@ function jl_cat_list($current_cat_id = false)
 // Request var func
 function request($var, $rtype = "", $allowhtml = false)
 	{
-	if (strtolower($rtype)=="get")
-		{$data = $_GET[$var];}
-	elseif (strtolower($rtype)=="post")
-		{$data = $_POST[$var];}
-	elseif (strtolower($rtype)=="cookie")
-		{$data = $_COOKIE[$var];}
-	else
-		{$data = $_REQUEST[$var];}
+          $data = null;
+	if (strtolower($rtype)=="get") {
+          if (isset($_GET[$var]))
+            $data = $_GET[$var];
+        }
+	elseif (strtolower($rtype)=="post") {
+          if (isset($_POST[$var]))
+            $data = $_POST[$var];
+        }
+	elseif (strtolower($rtype)=="cookie") {
+          if (isset($_COOKIE[$var]))
+            $data = $_COOKIE[$var];
+        }
+	else {
+          if (isset($_REQUEST[$var]))
+            $data = $_REQUEST[$var];
+        }
 	// If results is array.. as in check boxes etc.. return the array as is
-	if (is_array($data))
-		{
+	if (is_array($data)) {
 		return $data;
-		}
-	else
-		{
-		
+        }
+	else {
 		// SANITY CHECKS
 		$data = trim($data);
 	
