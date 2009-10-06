@@ -2,7 +2,7 @@
 @(include("../../config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
 atopbit();
 ?>
-<h1><a href="/admin/">Just Living Admin</a> &gt; <a href="index.php">Additions</a> &gt; Edit</h1>
+<h1><a href="<?php print $app_path; ?>admin/">Just Living Admin</a> &gt; <a href="index.php">Additions</a> &gt; Edit</h1>
 <?php
 
 // Have they just submitted from a preview page?
@@ -72,7 +72,7 @@ else
 			{
 			print("<h3>Addition For: <strong>" . $myrow["org_name"] . "</strong> | ");
 			print("<a href=\"/ethical-guide/view.php?id=" . $listing_id . "\">View listing on website</a> | ");
-			print("<a href=\"/admin/listings/edit.php?id=" . $listing_id . "\">Edit the listing details</a></h3>");
+			print("<a href=\"{$app_path}admin/listings/edit.php?id=" . $listing_id . "\">Edit the listing details</a></h3>");
 			}
 	?>
 	

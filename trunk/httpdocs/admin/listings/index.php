@@ -8,7 +8,7 @@ $status = request("status","post");
 $flag_id = request("flag","post");
 ?>
 
-<h1><a href="/admin/">Just Living Admin</a> &gt; Listings</h1>
+<h1><a href="<?php print $app_path; ?>admin/">Just Living Admin</a> &gt; Listings</h1>
 
 <h2>Functions</h2>
 <ul>

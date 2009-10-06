@@ -2,7 +2,7 @@
 @(include("../../config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
 atopbit();
 ?>
-<h1><a href="/admin/">Just Living Admin</a> &gt; <a href="index.php">Listings</a> &gt; Add / Edit</h1>
+<h1><a href="<?php print $app_path; ?>admin/">Just Living Admin</a> &gt; <a href="index.php">Listings</a> &gt; Add / Edit</h1>
 <?php
 
 // Have they just submitted from a preview page?
@@ -82,7 +82,7 @@ if (request("submit","post"))
 			} 
 		
 		// Message
-		print("<h2>Listing Added</h2><ul><li><a href=\"javascript:history.go(-2)\">View listings index in admin</li><li><a href=\"/guide/view.php?id=$id&amp;cat=$cat_id\">View listing on website</li><li><a href=\"edit.php?id=$id\">Continue to edit listing</a></li><li><a href=\"/admin/\">Admin homepage</a></ul>"); 
+		print("<h2>Listing Added</h2><ul><li><a href=\"javascript:history.go(-2)\">View listings index in admin</li><li><a href=\"/guide/view.php?id=$id&amp;cat=$cat_id\">View listing on website</li><li><a href=\"edit.php?id=$id\">Continue to edit listing</a></li><li><a href=\"{$app_path}admin/\">Admin homepage</a></ul>"); 
 		}
 		
 	// UPDATE
@@ -159,7 +159,7 @@ if (request("submit","post"))
 			} 
 	
 		// Message
-		print("<h2>Listing Updated</h2><ul><li><a href=\"javascript:history.go(-2)\">View listings index in admin</li><li><a href=\"/guide/view.php?id=$id&amp;cat=$cat_id\">View listing on website</li><li><a href=\"edit.php?id=$id\">Continue to edit listing</a></li><li><a href=\"/admin/\">Admin homepage</a></ul>");
+		print("<h2>Listing Updated</h2><ul><li><a href=\"javascript:history.go(-2)\">View listings index in admin</li><li><a href=\"/guide/view.php?id=$id&amp;cat=$cat_id\">View listing on website</li><li><a href=\"edit.php?id=$id\">Continue to edit listing</a></li><li><a href=\"{$app_path}admin/\">Admin homepage</a></ul>");
 		}
 		
 	// DELETE
@@ -176,7 +176,7 @@ if (request("submit","post"))
 		mysql_query("DELETE FROM listings_flags WHERE listing_id = $id");
 		
 		// Message
-		print("<h2>Listing Deleted</h2><ul><li><a href=\"javascript:history.go(-2)\">Back to admin listings list</li><li><a href=\"/admin/\">Admin homepage</a></ul>");
+		print("<h2>Listing Deleted</h2><ul><li><a href=\"javascript:history.go(-2)\">Back to admin listings list</li><li><a href=\"{$app_path}admin/\">Admin homepage</a></ul>");
 		}
 	}
 else
@@ -332,7 +332,7 @@ else
 	</p>
 		
 	<p>
-	<label for="description">Description of activities: [<a href="/admin/help.php">HTML format help</a>]</label>
+	<label for="description">Description of activities: [<a href="<?php print $app_path; ?>admin/help.php">HTML format help</a>]</label>
 	<textarea cols="80" rows="20" name="description" id="description"><?php print($description); ?></textarea>
 	</p>
 	

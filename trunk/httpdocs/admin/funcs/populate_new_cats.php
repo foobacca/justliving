@@ -3,7 +3,7 @@
 atopbit();
 ?>
 
-<h1><a href="/admin/">Just Living Admin</a> &gt; Populate new categories table</h1>
+<h1><a href="<?php print $app_path; ?>admin/">Just Living Admin</a> &gt; Populate new categories table</h1>
 
 <?php
 // Delete all from the listings categories table

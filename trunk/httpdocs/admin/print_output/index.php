@@ -10,7 +10,7 @@ atopbit();
 </head>
 <body>
 
-<h1><a href="/admin/">Just Living Admin</a> &gt; Print Functions</h1>
+<h1><a href="<?php print $app_path; ?>admin/">Just Living Admin</a> &gt; Print Functions</h1>
 
 <h2>Odd Scripts</h2>
 

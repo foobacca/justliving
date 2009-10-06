@@ -3,7 +3,7 @@
 atopbit();
 ?>
 
-<h1><a href="/admin/">Just Living Admin</a> &gt; <a href="index.php">Listings</a> &gt; Send welcome email</h1>
+<h1><a href="<?php print $app_path; ?>admin/">Just Living Admin</a> &gt; <a href="index.php">Listings</a> &gt; Send welcome email</h1>
 
 <?php
 // Get the confirm, if set

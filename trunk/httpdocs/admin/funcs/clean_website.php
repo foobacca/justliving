@@ -2,7 +2,7 @@
 @(include("../../config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
 atopbit();
 ?>
-<h1><a href="/admin/">Just Living Admin</a> &gt; Clean Up: Website</h1>
+<h1><a href="<?php print $app_path; ?>admin/">Just Living Admin</a> &gt; Clean Up: Website</h1>
 
 <p>This script will remove any 'http://' from the start of the website field.</p>
 
@@ -18,7 +18,7 @@ if ($myrow = mysql_fetch_array($result))
 
 		if ($myrow["website"])
 			{
-			print("<tr><td><strong><a href=\"/admin/listings/edit.php?id=" . $myrow["id"] . "\">" . clean_text($myrow["org_name"]) . "</a></strong></td><td>" . clean_text($myrow["website"]) . "</td>");
+			print("<tr><td><strong><a href=\"{$app_path}admin/listings/edit.php?id=" . $myrow["id"] . "\">" . clean_text($myrow["org_name"]) . "</a></strong></td><td>" . clean_text($myrow["website"]) . "</td>");
 			
 			$myrow["website"] = trim($myrow["website"]);
 			

@@ -3,7 +3,7 @@ die("KILLED SCRIPT");
 @(include("../../config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
 atopbit();
 ?>
-<h1><a href="/admin/">Just Living Admin</a> &gt; BIG EMAIL to 'live - in need of work' organisations</h1>
+<h1><a href="<?php print $app_path; ?>admin/">Just Living Admin</a> &gt; BIG EMAIL to 'live - in need of work' organisations</h1>
 
 <h3>Sending emails...</h3>
 
@@ -94,7 +94,7 @@ if(is_array($no_email))
 	{
 	foreach($no_email as $key => $value)
 		{
-		print("<a href=\"/admin/listings/edit.php?id=$key\">$value</a><br />");
+		print("<a href=\"{$app_path}admin/listings/edit.php?id=$key\">$value</a><br />");
 		}
 	}
 	
