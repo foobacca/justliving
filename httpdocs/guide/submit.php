@@ -128,7 +128,7 @@ else
 	<li>Mandatory fields are in bold and marked with an asterix*.</li>
 	</ul>
 	
-	<form method="post" action="<?php print($PHP_SELF); ?>">
+	<form method="post" action="<?php print($_SERVER['PHP_SELF']); ?>">
 		
 	<fieldset>
 	<legend>Your details</legend>
