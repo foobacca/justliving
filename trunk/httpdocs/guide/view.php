@@ -282,7 +282,7 @@ else
 	
 	?>
 	
-	<form method="post" action="<?php print($PHP_SELF); ?>">
+	<form method="post" action="<?php print($_SERVER['PHP_SELF']); ?>">
 		
 	<fieldset style="padding-top: 10px;">
 	<legend>Post additional information</legend>
