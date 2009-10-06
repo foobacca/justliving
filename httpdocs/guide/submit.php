@@ -2,10 +2,22 @@
 @(include("../config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
 topbit(2);
 
-if ($submit)
+if (request("submit"))
 	{
 
 	// Clean Strings
+	$submit_name = request("submit_name");
+	$submit_email = request("submit_email");
+	$subject = request("subject");
+	$cat_id = request("cat_id");
+	$org_name = request("org_name");
+	$description = request("description");
+	$website = request("website");
+	$email = request("email");
+	$phone = request("phone");
+	$address = request("address");
+	$postcode = request("postcode");
+	
 	$submit_name = clean_input($submit_name);
 	$submit_email = clean_input($submit_email);
 	$subject = clean_input($subject);
@@ -18,7 +30,9 @@ if ($submit)
 	$address = clean_input($address);
 	$postcode = clean_input($postcode);
 	$scheck = request("scheck","post");
-	
+
+
+
 	// Check for mandatory
 	if (!$org_name OR !$description)
 		{
