@@ -155,7 +155,7 @@ If($_POST['submit']==true AND !$password_form) {
 </head>
 <body>
 
-<h1><a href="/admin/">Just Living Admin</a> &gt; <a href="index.php">Listings</a> &gt; <a href="edit.php?id=<?php print($id); ?>">Add / Edit</a> &gt; Upload Web Image</h1>
+<h1><a href="<?php print $app_path; ?>admin/">Just Living Admin</a> &gt; <a href="index.php">Listings</a> &gt; <a href="edit.php?id=<?php print($id); ?>">Add / Edit</a> &gt; Upload Web Image</h1>
 
 <?
 If($password_form)

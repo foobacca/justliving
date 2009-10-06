@@ -3,7 +3,7 @@
 atopbit();
 ?>
 
-<h1><a href="/admin/">Just Living Admin</a> &gt; News</h1>
+<h1><a href="<?php print $app_path; ?>admin/">Just Living Admin</a> &gt; News</h1>
 
 <h2>View &amp; Edit News Articles</h2>
 <ul>

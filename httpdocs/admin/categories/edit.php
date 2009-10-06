@@ -2,7 +2,7 @@
 @(include("../../config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
 atopbit();
 ?>
-<h1><a href="/admin/">Just Living Admin</a> &gt; <a href="index.php">Categories</a> &gt; Edit</h1>
+<h1><a href="<?php print $app_path; ?>admin/">Just Living Admin</a> &gt; <a href="index.php">Categories</a> &gt; Edit</h1>
 <?php
 
 // Have they just submitted from a preview page?

@@ -2,7 +2,7 @@
 @(include("../config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
 atopbit();
 ?>
-<h1><a href="/admin/"><?php print $guide_name; ?> Admin</a> &gt; Help</h1>
+<h1><a href="<?php print $app_path; ?>admin/"><?php print $guide_name; ?> Admin</a> &gt; Help</h1>
 
 <h2>Help with <?php print $guide_name; ?> Admin</h2>
 
