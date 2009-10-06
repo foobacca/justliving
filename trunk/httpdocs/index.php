@@ -96,7 +96,7 @@ foreach ($latest as $key=>$value)
 		$result = mysql_query("SELECT org_name, cat_id FROM listings WHERE id = $id");
 		if ($myrow = mysql_fetch_array($result)) 
 			{
-			print("<a href=\"/guide/view.php?id=" . $id . "&amp;cat=" . $myrow["cat_id"] . "\">" . $myrow["org_name"] . "</a></p>\n");
+			print("<a href=\"{$app_path}guide/view.php?id=" . $id . "&amp;cat=" . $myrow["cat_id"] . "\">" . $myrow["org_name"] . "</a></p>\n");
 			$printed[] = $id;
 			}
 		}
@@ -105,7 +105,7 @@ foreach ($latest as $key=>$value)
 		$result = mysql_query("SELECT org_name, cat_id FROM listings WHERE id = $id");
 		if ($myrow = mysql_fetch_array($result)) 
 			{
-			print("<a href=\"/guide/view.php?id=" . $id . "&amp;cat=" . $myrow["cat_id"] . "\">" . $myrow["org_name"] . "</a></p>\n");
+			print("<a href=\"{$app_path}guide/view.php?id=" . $id . "&amp;cat=" . $myrow["cat_id"] . "\">" . $myrow["org_name"] . "</a></p>\n");
 			$printed[] = $id;
 			}
 		}
@@ -114,7 +114,7 @@ foreach ($latest as $key=>$value)
 		$result = mysql_query("SELECT headline FROM news WHERE id = $id"); 
 		if ($myrow = mysql_fetch_array($result)) 
 			{
-			print("<a href=\"/news.php?id=" . $id . "\">" . htmlentities($myrow["headline"]) . "</a></p>\n");
+			print("<a href=\"{$app_path}news.php?id=" . $id . "\">" . htmlentities($myrow["headline"]) . "</a></p>\n");
 			$printed[] = $id;
 			}	
 		}
