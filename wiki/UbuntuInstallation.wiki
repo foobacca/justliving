@@ -58,11 +58,24 @@ $ mysql -p -u justliving justliving < other/dbcreate-sample.sql
 
 You should then be able to go to your web browser and enter http://localhost/justliving/ and see the site :) (or http://yoursite.com/justliving/ if the web browser is not on the same computer as the web server).
 
-= To Do = 
+== Customising the site ==
 
-How to CustomiseYourSite.
+How to CustomiseYourSite - configuration, look and feel etc.
 
- * how to set up passwords for the admin section (apache config)
- * setting up the site with multiple domains
+==  how to set up passwords for the admin section. ==
+
+This requires webserver set up.
+
+If you have full control of your web server, you need to set up access control *todo*.
+
+If you are on a shared server, you need to [http://www.elated.com/articles/password-protecting-your-pages-with-htaccess/ set up htaccess and htpasswd files] or see if there is something in the server management web interface for managing this.
+
+== setting up the site with multiple domains ==
+
+This requires web server set up.
+
+If you have full control of your web server, you need to set up Virtual Hosts - for now, google for it.
+
+If you are on a shared server, there is probably a web interface to manage this. The details will depend on your provider.
 
 Basically just need to find good guides on the web and link to them.
