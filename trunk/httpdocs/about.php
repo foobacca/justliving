@@ -11,22 +11,22 @@ $result = mysql_query("SELECT id, headline, date FROM news ORDER BY date DESC LI
 		{
 		do 
 			{
-			print("<p><span class=\"date\">" . date("jS F y",$myrow["date"]) . "</span><br /><a href=\"/news.php?id=" . $myrow["id"] . "\">" . $myrow["headline"] . "</a></p>\n");
+			print("<p><span class=\"date\">" . date("jS F y",$myrow["date"]) . "</span><br /><a href=\"" . $app_path . "news.php?id=" . $myrow["id"] . "\">" . $myrow["headline"] . "</a></p>\n");
 			} while ($myrow = mysql_fetch_array($result));
 		}	
 ?>
-<p>&nbsp;<br /><a href="/news.php">News Archive</a></p>
+<p>&nbsp;<br /><a href="<?php print $app_path; ?>news.php">News Archive</a></p>
 </div>
 
 <h2>About <?php print $guide_name; ?></h2>
 
-<p><?php print $guide_name; ?> is a directory of socially responsible organisations doing proper positive stuff in <?php print $city; ?>. What does this mean? Good question; read our <a href="/principles/">principles</a> for some idea of where we're coming from and what we want to promote.</p>
+<p><?php print $guide_name; ?> is a directory of socially responsible organisations doing proper positive stuff in <?php print $city; ?>. What does this mean? Good question; read our <a href="<?php print $app_path; ?>principles/">principles</a> for some idea of where we're coming from and what we want to promote.</p>
 
 <p>We hope that the guide will make it easier for people new to <?php print $city; ?> to find their way around; that long-term residents will find new stuff of interest; that anyone searching on the internet for organisations will easily find complete details; and that organisations listed will find out about, collaborate with, and support each other. We've heard of examples of this happening, which makes us feel warm and fuzzy, unless that was the whisky.</p>
 
-<p>The guide is open to submissions from the public through the <a href="/guide/submit.php">form on the website</a>; these are checked and included in the guide as appropriate.</p>
+<p>The guide is open to submissions from the public through the <a href="<?php print $app_path; ?>guide/submit.php">form on the website</a>; these are checked and included in the guide as appropriate.</p>
 
-<p>Anything that happens on the guide, e.g. revisions, maintenance, promotion, printing etc. is done on-and-off by a group of volunteers, making decisions by consensus. We don't sell advertising in the guide and any donations go towards costs of production - everyone involved does it for the love of it. There's lot of ways to <a href="getinvolved.php">get involved</a> or <a href="contact.php">contact us</a> if you have any questions.</p>
+<p>Anything that happens on the guide, e.g. revisions, maintenance, promotion, printing etc. is done on-and-off by a group of volunteers, making decisions by consensus. We don't sell advertising in the guide and any donations go towards costs of production - everyone involved does it for the love of it. There's lot of ways to <a href="<?php print $app_path; ?>getinvolved.php">get involved</a> or <a href="<?php print $app_path; ?>contact.php">contact us</a> if you have any questions.</p>
 
 <h2>&nbsp;</h2>
 <h2>History of <?php print $guide_name; ?></h2>

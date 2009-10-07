@@ -27,10 +27,10 @@ topbit(7);
 
 <h3><?php print $guide_name; ?> Print Editions</h3>
 <ul>
-<li><a href="/guide/editions/JustLiving-Summer09.pdf"><strong>Summer '09</strong></a> (4mb PDF)<br />48 page A5 booklet.</li>
-<li><a href="/guide/editions/JL03-Winter06.pdf">Winter '06</a> (610kb PDF)<br />36 page A5 booklet.</li>
-<li><a href="/guide/editions/JL02-LateAugust06.pdf">Late August '06</a> (854kb PDF)<br />A5 booklet.</li>
-<li><a href="/guide/editions/JL01-StrawberryFair06.pdf">Spring '06</a> (693kb PDF)<br />A5 booklet.</li>
+<li><a href="<?php print $app_path; ?>guide/editions/JustLiving-Summer09.pdf"><strong>Summer '09</strong></a> (4mb PDF)<br />48 page A5 booklet.</li>
+<li><a href="<?php print $app_path; ?>guide/editions/JL03-Winter06.pdf">Winter '06</a> (610kb PDF)<br />36 page A5 booklet.</li>
+<li><a href="<?php print $app_path; ?>guide/editions/JL02-LateAugust06.pdf">Late August '06</a> (854kb PDF)<br />A5 booklet.</li>
+<li><a href="<?php print $app_path; ?>guide/editions/JL01-StrawberryFair06.pdf">Spring '06</a> (693kb PDF)<br />A5 booklet.</li>
 </ul>
 
 <!--
