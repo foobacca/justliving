@@ -17,7 +17,7 @@ if (request("submit_comment","post"))
 	$comment = request("comment","post");
 	$submit_name = request("submit_name","post");
 	$submit_email = request("submit_email","post");
-	$scheck = request("scheck","post");
+	$spam_check = request("scheck","post");
 	
 	// Get the cat, which is hidden
 	$cat_id = $subject = request("cat","post");
@@ -35,7 +35,7 @@ if (request("submit_comment","post"))
 		}
 		
 	// Check 'no spam' field
-	if ($scheck != "no spam" AND $scheck != "No Spam" AND $scheck != "NO SPAM")
+	if (strtolower($spam_check) != "no spam")
 		{
 		?>
 		<h2>ERROR</h2>
@@ -57,20 +57,18 @@ if (request("submit_comment","post"))
 		$id = mysql_insert_id();
 		
 		// Set Vars
-		$sendtoemail="organise@justliving.org.uk";
-		$replyemail="server@justliving.org.uk";
 		$thesubject="$guide_name - New Addition to a Listing";
 		
 		// Headers
-		$headers = "From: $replyemail\r\n";
-		$headers .= "Reply-To: $replyemail\r\n";
-		$headers .= "Return-Path: $replyemail\r\n";
+		$headers = "From: $replyto_email\r\n";
+		$headers .= "Reply-To: $replyto_email\r\n";
+		$headers .= "Return-Path: $replyto_email\r\n";
 		
 		// Format the body of the email
-		$themessage = "A new addition has been posted, check it out at:\nhttp://www.justliving.org.uk/admin/additions/edit.php?id=$id\n\nText: $comment\n$Submit Name: $submit_name\nSubmit Email: $submit_email\n\n---\nAutoMail from $guide_name";
+		$themessage = "A new addition has been posted, check it out at:\n" . $site_url . $app_path . "admin/additions/edit.php?id=$id\n\nText: $comment\n$Submit Name: $submit_name\nSubmit Email: $submit_email\n\n---\nAutoMail from $guide_name";
 		
 		// Send
-		mail("$sendtoemail","$thesubject","$themessage","$headers");
+		mail("$organise_email","$thesubject","$themessage","$headers");
 		
 		}
 	
@@ -79,8 +77,8 @@ if (request("submit_comment","post"))
 	<h2>Information Added</h2>
 	<p>Your additional information has been sent to the <?php print $guide_name; ?> team. One of us will check out the suggested changes to the listing and update it if necessary. Cheers.</p>
 	<ul>
-	<li><a href="view.php?id=<?php print($id); ?>&amp;cat=<?php print($cat); ?>">Back to the listing</a></li>
-	<li><a href="/">View guide index</a></li>
+        <li><a href="<?php print $app_path; ?>guide/view.php?id=<?php print($id); ?>&cat=<?php print($cat_id); ?>">Back to the listing</a></li>
+	<li><a href="<?php print $app_path; ?>">View guide index</a></li>
 	</ul>
 
 	<?php
