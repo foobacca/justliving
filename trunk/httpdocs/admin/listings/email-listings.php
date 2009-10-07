@@ -15,7 +15,7 @@ if ($confirm)
 	print("<h2>Email sent to...</h2><ul>");
 	
 	// Set Email Headers
-	$replyemail="organise@justliving.org.uk";
+	$replyemail=$organise_email;
 	$headers = "From: $replyemail\r\n";
 	$headers .= "Reply-To: $replyemail\r\n";
 	$headers .= "Return-Path: $replyemail\r\n";
@@ -78,7 +78,7 @@ else
 	{
 	// Show list and enter email details
 	?>
-	<p>The email will be sent from 'organise@justliving.org.uk'.</p>
+          <p>The email will be sent from '<?php print $organise_email; ?>'.</p>
 	<h2>You're about to email the following organisations</h2>
 	<form method="post" action="email-listings.php">
 	

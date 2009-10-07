@@ -9,7 +9,7 @@ if ($lmyrow = mysql_fetch_array($result))
 	do
 	{
 		$mail_to='michael@decisiontrees.net';
-		$mail_from='organise@justliving.org.uk';
+                $mail_from=$organise_email;
 		$mail_sub='test';
 		$mail_mesg=$txtMsg;
 		
