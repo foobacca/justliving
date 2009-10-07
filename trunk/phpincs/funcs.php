@@ -13,7 +13,7 @@ header("Content-Type: text/html; charset=UTF-8");
 function topbit($n = false, $page_title = "")
 	{
           # use these globals
-          global $app_path, $default_page_title, $city, $site_url;
+          global $app_path, $default_page_title, $city, $site_url, $guide_name;
           if (strcmp($page_title, "") == 0)
             $page_title = $default_page_title;
 	?>
@@ -62,7 +62,7 @@ function topbit($n = false, $page_title = "")
 // Prints the botbit of the page
 function botbit()
 	{
-          global $app_path, $paypal_in_use, $paypal_html;
+          global $app_path, $paypal_in_use, $paypal_html, $guide_name;
 	?>
 <div class="clear"></div>
 </div>
@@ -406,7 +406,7 @@ function remove_extra_linebreaks($string)
 // Topbit
 function atopbit()
 	{
-          global $app_path;
+          global $app_path, $guide_name;
 	?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
