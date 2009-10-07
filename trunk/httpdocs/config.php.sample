@@ -19,6 +19,10 @@ $guide_name = 'Just Living';
 $guide_subtitle = 'A proper positive guide to Cambridge';
 $default_page_title = "Just Living - A proper positive guide to Cambridge";
 
+$site_url = 'http://www.justliving.org.uk';
+$organise_email = 'organise@justliving.org.uk';
+$replyto_email = 'server@justliving.org.uk';
+
 # is wiki in use, and what is the url
 $wiki_in_use = true;
 $wiki_url = 'http://wiki.justliving.org.uk/';
