@@ -77,17 +77,17 @@ if (request("submit"))
 			}
 		
 		// Set Vars
-		$sendtoemail="organise@justliving.org.uk";
-		$replyemail="server@justliving.org.uk";
+		$sendtoemail=$organise_email;
+		$replyemail=$server_email;
 		$thesubject="$guide_name - New Listing";
 		
 		// Headers
-		$headers = "From: $replyemail\r\n";
-		$headers .= "Reply-To: $replyemail\r\n";
-		$headers .= "Return-Path: $replyemail\r\n";
+		$headers = "From: " . $replyemail . "\r\n";
+		$headers .= "Reply-To: " . $replyemail . "\r\n";
+		$headers .= "Return-Path: " . $replyemail . "\r\n";
 		
 		// Format the body of the email
-		$themessage = "A new listing has been added, check it out at:\nhttp://www.justliving.org.uk/admin/listings/edit.php?id=$id\n\nOrganisation Name: $org_name\nCategory: $cat\nDescription: $description\n\n---\nAutoMail from $guide_name";
+		$themessage = "A new listing has been added, check it out at:\n" . $guide_url . $app_path . "admin/listings/edit.php?id=" . $id . "\n\nOrganisation Name: " . $org_name . "\nCategory: " . $cat . "\nDescription: " . $description . "\n\n---\nAutoMail from " . $guide_name;
 		
 		// Send
 		if ($id)

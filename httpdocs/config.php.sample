@@ -21,7 +21,7 @@ $default_page_title = "Just Living - A proper positive guide to Cambridge";
 
 $site_url = 'http://www.justliving.org.uk';
 $organise_email = 'organise@justliving.org.uk';
-$replyto_email = 'server@justliving.org.uk';
+$server_email = 'server@justliving.org.uk';
 $automail_email = 'automail@justliving.org.uk';
 $contact_email = 'info@justliving.org.uk';
 $contact_email_obfusticated = 'info [at] justliving [dot] org [dot] uk';
