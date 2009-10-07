@@ -60,9 +60,10 @@ if (request("submit_comment","post"))
 		$thesubject="$guide_name - New Addition to a Listing";
 		
 		// Headers
-		$headers = "From: $replyto_email\r\n";
-		$headers .= "Reply-To: $replyto_email\r\n";
-		$headers .= "Return-Path: $replyto_email\r\n";
+                $replyemail = $server_email;
+		$headers = "From: " . $replyemail . "\r\n";
+		$headers .= "Reply-To: " . $replyemail . "\r\n";
+		$headers .= "Return-Path: " . $replyemail . "\r\n";
 		
 		// Format the body of the email
 		$themessage = "A new addition has been posted, check it out at:\n" . $site_url . $app_path . "admin/additions/edit.php?id=$id\n\nText: $comment\n$Submit Name: $submit_name\nSubmit Email: $submit_email\n\n---\nAutoMail from $guide_name";
