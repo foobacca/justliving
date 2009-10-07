@@ -13,7 +13,7 @@ header("Content-Type: text/html; charset=UTF-8");
 function topbit($n = false, $page_title = "")
 	{
           # use these globals
-          global $app_path, $default_page_title, $city;
+          global $app_path, $default_page_title, $city, $site_url;
           if (strcmp($page_title, "") == 0)
             $page_title = $default_page_title;
 	?>
@@ -32,14 +32,14 @@ function topbit($n = false, $page_title = "")
 
 <form method="get" action="http://www.google.co.uk/custom">
 <div id="search">
-<input type="hidden" name="sitesearch" value="http://www.justliving.org.uk" />
+<input type="hidden" name="sitesearch" value="<?php print $site_url; ?>" />
 <input type="hidden" name="domains" value="http://www." />
 <input type="text" name="q" size="30" maxlength="255" style="margin: 0;" />
 <input type="submit" name="sa" value="Search" class="but" style="margin: 0 0 0 5px;" />
 </div>
 </form>
 
-<h1><a href="<?php print $app_path; ?>"><img src="<?php print $app_path; ?>imgs/JL_logo.gif" alt="Just Living" width="293" height="60" /></a></h1>
+<h1><a href="<?php print $app_path; ?>"><img src="<?php print $app_path; ?>imgs/JL_logo.gif" alt="<?php print $guide_name; ?>" width="293" height="60" /></a></h1>
 
 <div id="navcontainer">
 <ul id="navlist">
@@ -74,7 +74,7 @@ function botbit()
             print $paypal_html;
 ?>
 
-<p class="center adminlink"><a href="<?php print $app_path; ?>admin/" id="adminlink"><img src="<?php print $app_path; ?>imgs/admin.gif" alt="Just Living Admin" width="20" height="20" /></a></p>
+<p class="center adminlink"><a href="<?php print $app_path; ?>admin/" id="adminlink"><img src="<?php print $app_path; ?>imgs/admin.gif" alt="<?php print $guide_name; ?> Admin" width="20" height="20" /></a></p>
 
 <p>&nbsp;</p>
 
@@ -377,14 +377,14 @@ function superhtmlentities($text)
 // Only used in submit listing + addition for sending emails to JL admin
 function send_jl_mail($email, $subject, $msg)
 	{
-          global $city, $wiki_in_use, $wiki_url;
+          global $city, $wiki_in_use, $wiki_url, $site_url, $automail_email;
 
-          $msg = $msg . "\n\n--\nJust Living - An Ethical Guide to $city\nWebsite: http://www.justliving.org.uk";
+          $msg = $msg . "\n\n--\n" . $guide_name . " - An Ethical Guide to " . $city . "\nWebsite: " + $site_url;
           if ($wiki_in_use) 
             $msg = $msg . "\nWiki: $wiki_url";
-          $headers = "From: automail@justliving.org.uk\r\n";
-          $headers .= "Reply-To: automail@justliving.org.uk\r\n";
-          $headers .= "Return-Path: automail@justliving.org.uk\r\n";
+          $headers = "From: " . $automail_email . "\r\n";
+          $headers .= "Reply-To: " . $automail_email . "\r\n";
+          $headers .= "Return-Path: " . $automail_email . "\r\n";
           mail($email, stripslashes($subject), stripslashes(remove_extra_linebreaks($msg)), $headers) or die("Mail not sent");
 	}
 	
@@ -411,7 +411,7 @@ function atopbit()
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-<title>Just Living Admin</title>
+<title><?php print $guide_name; ?> Admin</title>
 <style type="text/css" media="all">@import "<?php print $app_path; ?>css/admin.css";</style>
           <script src="<?php print $app_path; ?>js/sorttable.js"></script>
 </head>
