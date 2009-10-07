@@ -13,7 +13,7 @@ $confirm = request("confirm","get");
 $id = request("id","get");
 
 // Set Vars
-$replyemail="organise@justliving.org.uk";
+$replyemail=$organise_email;
 
 // Set Headers
 $headers = "From: $replyemail\r\n";
@@ -36,7 +36,7 @@ if ($myrow = mysql_fetch_array($result))
 	// Format the body of the email
 	$themessage = "Hi there,
 
-We're writing to let you know that your organisation has just been listed in \"Just Living\", a free volunteer-run guide to socially responsible organisations that are doing positive stuff in $city - we think you're one of them!
+We're writing to let you know that your organisation has just been listed in \"{$guide_name}\", a free volunteer-run guide to socially responsible organisations that are doing positive stuff in $city - we think you're one of them!
 
 Here's a copy of the details we currently have for you:
 
@@ -58,17 +58,17 @@ We'd like to know:
 - would you be interested in stocking business cards or posters advertising the fact that you're listed in the guide?
 - if you have any other suggestions for our guide?
 
-Also, if your organisation has a website and if it would be appropriate, you could also mention that you're listed in Just Living and add a link to our site - www.justliving.org.uk - you can get the logo from our site or we can send you one.
+Also, if your organisation has a website and if it would be appropriate, you could also mention that you're listed in $guide_name and add a link to our site - $site_url - you can get the logo from our site or we can send you one.
 
 Please note - there's no obligation at all to answer or do any of this - you'll still be listed with us. All of this just helps us to help organisations like yours. We might chase you up at some point to check your details if we don't hear from you, because we want to make sure we've listed you accurately.
 
 We're doing this because we'd like to see more organisations working to create a positive society, and we want people to be aware of and support the ones that $city has right now. We don't get paid for this, and we don't allow advertising in the guide.
 
-Just Living is available online for free at http://www.justliving.org.uk, and we're currently working on the next edition of a paper copy, which we make available for donations when we have them in stock.
+$guide_name is available online for free at $site_url, and we're currently working on the next edition of a paper copy, which we make available for donations when we have them in stock.
 
-If you'd like any more information or have any questions then take a look at our website, or don't hesitate to email us - organise@justliving.org.uk and someone will be in touch shortly.
+If you'd like any more information or have any questions then take a look at our website, or don't hesitate to email us - $organise_email - and someone will be in touch shortly.
 
-Cheers! Tom (one of the Just Living volunteers).";
+Cheers! Tom (one of the $guide_name volunteers).";
 
 	if ($confirm == "yes")
 		{

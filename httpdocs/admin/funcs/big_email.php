@@ -10,7 +10,7 @@ atopbit();
 <?php
 
 // Set Vars
-$replyemail="organise@justliving.org.uk";
+$replyemail=$organise_email;
 
 // Set Headers
 $headers = "From: $replyemail\r\n";
@@ -64,9 +64,9 @@ Please note - on the last two points there's no obligation at all, we'd just lik
 
 We're doing this because we'd like to see more organisations working to create a positive society, and we want people to be aware of and support the ones that $city has right now. We don't get paid for this, and we don't allow advertising in the guide. 
 
-Just Living is available online for free at http://www.justliving.org.uk, and we're currently working on the next edition of a paper copy, which we make available for donations when we have them in stock.
+Just Living is available online for free at $site_url, and we're currently working on the next edition of a paper copy, which we make available for donations when we have them in stock.
 
-If you'd like any more information or have any suggestions or questions then take a look at our website, or don't hesitate to email us - organise@justliving.org.uk and someone will be in touch shortly.
+If you'd like any more information or have any suggestions or questions then take a look at our website, or don't hesitate to email us - $organise_email - and someone will be in touch shortly.
 
 Cheers! Ben (one of the Just Living volunteers).";
 
