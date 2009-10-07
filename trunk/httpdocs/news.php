@@ -2,6 +2,7 @@
 @(include("config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
 topbit();
 
+$id = request("id");
 if (!$id)
 	{
 	?>
@@ -16,7 +17,7 @@ if (!$id)
 		{
 		do 
 			{
-			print("<li><strong>" . date("jS F y",$myrow["date"]) . "</strong><br /><a href=\"/news.php?id=" . $myrow["id"] . "\">" . $myrow["headline"] . "</a></li>\n");
+			print("<li><strong>" . date("jS F y",$myrow["date"]) . "</strong><br /><a href=\"" . $app_path . "news.php?id=" . $myrow["id"] . "\">" . $myrow["headline"] . "</a></li>\n");
 			} while ($myrow = mysql_fetch_array($result));
 		}	
 	?>
@@ -33,7 +34,7 @@ else
 		print("<h2>" . $myrow["headline"] . "</h2>\n");
 		print("<p><strong><span class=\"date\">" . date("jS F Y",$myrow["date"]) . "</span></strong></p>");
 		print(autop($myrow["article"]));
-		print("<ul><li><a href=\"news.php\"><strong><?php print $guide_name; ?> News Archive</strong></a></li></ul>");
+		print("<ul><li><a href=\"" . $app_path . "news.php\"><strong>" . $guide_name . " News Archive</strong></a></li></ul>");
 		}	
 	}
 
