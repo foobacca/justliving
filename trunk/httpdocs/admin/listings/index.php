@@ -190,7 +190,7 @@ if ($lmyrow = mysql_fetch_array($result))
 			}
 			
 		// Email Checkbox
-		if($lmyrow["email"])
+		if(isset($lmyrow["email"]))
 			{
 			print("<td><input name=\"listings[]\" type=\"checkbox\" value=\"" . $lmyrow["id"] . "\" checked=\"checked\" /></td>");
 			}
