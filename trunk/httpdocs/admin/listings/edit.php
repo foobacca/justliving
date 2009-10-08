@@ -135,9 +135,9 @@ if (request("submit","post"))
 			do 
 				{
 				// Check to see if this cat is set to 'on', if so, add an entry into the database
-				if (${"cat_" . $myrow[id]} == "on")
+				if (isset(${"cat_" . $myrow["id"]}))      // == "on")
 					{
-					mysql_query("INSERT INTO listings_categories (listing_id, category_id) VALUES ('$id', '" . $myrow[id] . "')");
+					mysql_query("INSERT INTO listings_categories (listing_id, category_id) VALUES ('$id', '" . $myrow["id"] . "')");
 					}
 				} while ($myrow = mysql_fetch_array($result));
 			} 
@@ -165,15 +165,19 @@ if (request("submit","post"))
 			do 
 				{
 				// Check to see if this cat is set to 'on', if so, add an entry into the database
-				if (${"flag_" . $myrow[id]} == "on")
+				if (isset(${"flag_" . $myrow["id"]})) // == "on")
 					{
-					mysql_query("INSERT INTO listings_flags (listing_id, flag_id) VALUES ('$id', '" . $myrow[id] . "')");
+					mysql_query("INSERT INTO listings_flags (listing_id, flag_id) VALUES ('$id', '" . $myrow["id"] . "')");
 					}
 				} while ($myrow = mysql_fetch_array($result));
 			} 
 	
 		// Message
-		print("<h2>Listing Updated</h2><ul><li><a href=\"javascript:history.go(-2)\">View listings index in admin</li><li><a href=\"/guide/view.php?id=$id&amp;cat=$cat_id\">View listing on website</li><li><a href=\"edit.php?id=$id\">Continue to edit listing</a></li><li><a href=\"{$app_path}admin/\">Admin homepage</a></ul>");
+                print("<h2>Listing Updated</h2>" .
+                  "<ul><li><a href=\"javascript:history.go(-2)\">View listings index in admin</li>" . 
+                  "<li><a href=\"" . $app_path . "guide/view.php?id=". $id . "&cat=" . $cat_id . "\">View listing on website</li>" .
+                  "<li><a href=\"edit.php?id=" . $id . "\">Continue to edit listing</a></li>" . 
+                  "<li><a href=\"" . $app_path . "admin/\">Admin homepage</a></ul>");
 		}
 		
 	// DELETE
@@ -293,7 +297,7 @@ else
 			// Check to see if this listing is in this category, only bother if we've got an $id
 			if ($id)
 				{
-				$catresult = mysql_query("SELECT id FROM listings_categories WHERE category_id = " . $myrow[id] . " AND listing_id = $id"); 
+				$catresult = mysql_query("SELECT id FROM listings_categories WHERE category_id = " . $myrow["id"] . " AND listing_id = $id"); 
 				if ($catmyrow = mysql_fetch_array($catresult)) 
 					{
 					print("<input type=\"checkbox\" name=\"cat_" . $myrow["id"] . "\" checked=\"checked\"> " . $myrow["name"] . "<br />\n");

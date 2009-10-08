@@ -14,6 +14,7 @@ $n_unchecked = mysql_num_rows(mysql_query("SELECT id FROM comments WHERE state =
 $n_checked = mysql_num_rows(mysql_query("SELECT id FROM comments WHERE state = 'checked'"));
 $n_all = mysql_num_rows(mysql_query("SELECT id FROM comments"));
 
+$view = request("view");
 if (!$view) {$view = "unchecked";}	
 
 if ($view == "notlive")

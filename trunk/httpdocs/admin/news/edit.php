@@ -5,6 +5,9 @@ atopbit();
 <h1><a href="<?php print $app_path; ?>admin/">Just Living Admin</a> &gt; <a href="index.php">News</a> &gt; Add / Edit</h1>
 <?php
 
+$headline = null;
+$date = null;
+$article = null;
 // Have they just submitted from a preview page?
 if (request("submit","post"))
 	{
