@@ -110,6 +110,7 @@ if ($nowelcomemailsent == 'y')
 else
 	{
 	// Build the $where
+        $where = "";
 	
 	// Search by category
 	if ($category)
@@ -166,13 +167,18 @@ else
 	}
 	
 // Run through results
+//$numbers = [];
+$numbers["notprocessed"] = 0;
+$numbers["live"] = 0;
+$numbers["rejected"] = 0;
+$nowebcat = false;
 if ($lmyrow = mysql_fetch_array($result))
 	{
 	do
 		{
 		
 		// Do a check, if no 'web categories' selected, highlight
-		$checkresult = mysql_query("SELECT id FROM listings_categories WHERE listing_id = " . $lmyrow[id] . "");
+		$checkresult = mysql_query("SELECT id FROM listings_categories WHERE listing_id = " . $lmyrow["id"] . "");
 		if ($checkmyrow = mysql_fetch_array($checkresult))
 			{
 			print("<tr>");
@@ -199,36 +205,36 @@ if ($lmyrow = mysql_fetch_array($result))
 		// Status
 		if ($lmyrow["state"] == "placeholder")
 			{
-			$numbers[notprocessed]++;
+			$numbers["notprocessed"]++;
 			print("<td style=\"background-color: aqua; color: white;\">Placeholder</td>");
 			}
 		elseif ($lmyrow["state"] == "unchecked")
 			{
-			$numbers[notprocessed]++;
+			$numbers["notprocessed"]++;
 			print("<td style=\"background-color: red; color: white;\">Unchecked</td>");
 			}
 		elseif ($lmyrow["state"] == "justliving")
 			{
-			$numbers[live]++;
+			$numbers["live"]++;
 			print("<td style=\"background-color: yellow;\">Live - needs work</td>");
 			}
 		elseif ($lmyrow["state"] == "signed off")
 			{
-			$numbers[live]++;
+			$numbers["live"]++;
 			print("<td style=\"background-color: green; color: white;\">Live - ready to go</td>");
 			}
 		elseif ($lmyrow["state"] == "notlive")
 			{
-			$numbers[rejected]++;
+			$numbers["rejected"]++;
 			print("<td style=\"background-color: black; color: white;\">Rejected</td>");
 			}
 		
 		// Category
 		print("<td>");
-		$cresult = mysql_query("SELECT name FROM categories WHERE id = " . $lmyrow[cat_id]);
+		$cresult = mysql_query("SELECT name FROM categories WHERE id = " . $lmyrow["cat_id"]);
 		if ($cmyrow = mysql_fetch_array($cresult))
 			{
-			print($cmyrow[name]);
+			print($cmyrow["name"]);
 			}
 		print("</td>");
 			
@@ -257,11 +263,13 @@ if ($lmyrow = mysql_fetch_array($result))
 
 <ul>
 <?php
-print("<li><strong>TOTAL:</strong> " . ($numbers[notprocessed] + $numbers[live] + $numbers[rejected]) . "</li>");
-print("<li><strong>Live:</strong> " . $numbers[live] . "</li>");
-print("<li><strong>Unchecked:</strong> " . $numbers[notprocessed] . "</li>");
-print("<li><strong>Rejected:</strong> " . $numbers[rejected] . "</li>");
+print("<li><strong>TOTAL:</strong> " . ($numbers["notprocessed"] + $numbers["live"] + $numbers["rejected"]) . "</li>");
+print("<li><strong>Live:</strong> " . $numbers["live"] . "</li>");
+print("<li><strong>Unchecked:</strong> " . $numbers["notprocessed"] . "</li>");
+print("<li><strong>Rejected:</strong> " . $numbers["rejected"] . "</li>");
+
 $result = mysql_query("SELECT id, email FROM listings WHERE email != ''");
+$email = 0;
 if ($myrow = mysql_fetch_array($result))
 	{
 	do
