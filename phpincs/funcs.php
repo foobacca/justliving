@@ -191,6 +191,9 @@ function request($var, $rtype = "", $allowhtml = false)
 	if (is_array($data)) {
 		return $data;
         }
+        else if ($data == null) {
+          return null;
+        }
 	else {
 		// SANITY CHECKS
 		$data = trim($data);
