@@ -71,7 +71,7 @@ else
 		if ($myrow = mysql_fetch_array($result)) 
 			{
 			print("<h3>Addition For: <strong>" . $myrow["org_name"] . "</strong> | ");
-			print("<a href=\"/ethical-guide/view.php?id=" . $listing_id . "\">View listing on website</a> | ");
+			print("<a href=\"" . $app_path . "guide/view.php?id=" . $listing_id . "\">View listing on website</a> | ");
 			print("<a href=\"{$app_path}admin/listings/edit.php?id=" . $listing_id . "\">Edit the listing details</a></h3>");
 			}
 	?>
