@@ -58,6 +58,12 @@ $ mysql -p -u justliving justliving < other/dbcreate-sample.sql
 
 You should then be able to go to your web browser and enter http://localhost/justliving/ and see the site :) (or http://yoursite.com/justliving/ if the web browser is not on the same computer as the web server).
 
+If you get an error about phtml files in your web browser, try 
+
+{{{
+$ sudo /etc/init.d/apache2 restart
+}}}
+
 == Customising the site ==
 
 How to CustomiseYourSite - configuration, look and feel etc.
