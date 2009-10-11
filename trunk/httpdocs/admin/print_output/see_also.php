@@ -10,6 +10,7 @@
 <body>
 
 <?php
+$id = request("id");
 $sql = "SELECT l.add_ts, l.edit_ts, l.org_name, l.address, l.postcode, l.email, l.website, l.phone, l.description FROM listings l, listings_categories lc WHERE l.id = lc.listing_id AND (l.state = 'justliving' OR l.state = 'signed off') AND lc.category_id = " . $id . " AND l.cat_id != $id ORDER BY l.org_name";
 $result2 = mysql_query($sql);
 

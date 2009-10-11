@@ -33,7 +33,7 @@ if ($myrow = mysql_fetch_array($result))
 
 print("</p>");
 
-if (is_array($no_email))
+if (isset ($no_email) && is_array($no_email))
 	{
 	foreach($no_email as $key => $value)
 		{
