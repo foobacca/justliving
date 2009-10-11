@@ -60,9 +60,9 @@ if ($myrow = mysql_fetch_array($result))
 		?>
 		<fieldset>
 		<?php
-		print("<input name=\"id_$number_listing\" type=\"hidden\" value=\"" . $myrow[id] . "\" />");
+		print("<input name=\"id_$number_listing\" type=\"hidden\" value=\"" . $myrow["id"] . "\" />");
 		?>
-		<legend><?php print($myrow[org_name]); ?></legend>
+		<legend><?php print($myrow["org_name"]); ?></legend>
 		<input type="submit" name="update" class="submit" value="Update All Listings" style="float: right;" />
 		<textarea cols="80" rows="20" name="description_<?php print($number_listing); ?>" id="description_<?php print($number_listing); ?>"><?php print($myrow['description']); ?></textarea>
 		</fieldset>

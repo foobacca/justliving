@@ -11,6 +11,7 @@
 <?php
 
 // Get the cats
+$id = request("id");
 $result = mysql_query("SELECT id, name, introduction FROM categories WHERE id = $id ORDER BY seq");
 if ($myrow = mysql_fetch_array($result)) 
 	{
