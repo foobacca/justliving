@@ -37,6 +37,7 @@ $stats_url = 'http://www.justliving.org.uk/admin/stats.php';
 # is database admin in use, and what is the url
 $db_admin_in_use = true;
 $db_admin_url = 'http://www.justliving.org.uk/admin/phpMyAdmin/';
+#$db_admin_url = 'https://login.digital-crocus.com/phpmyadmin/';
 
 # is paypal button in use, and what is the code
 $paypal_in_use = true;
