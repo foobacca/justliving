@@ -144,7 +144,7 @@ else
 	</p>
 	
 	<p>
-	<label for="scheck">Please type 'no spam' in this field</label>
+	<label for="scheck"><strong>Please type 'no spam' in this field*</strong></label>
 	<input type="text" name="scheck" size="45" maxlength="100" id="scheck" />
 	</p>
 	
@@ -159,7 +159,7 @@ else
 	</p>
 	
 	<p>
-	<label for="contact">Listing category</label>
+	<label for="contact"><strong>Listing category*</strong></label>
 	<select id="cat_id" name="cat_id">
 	<option value="">Please select a category</option>
 	<?php
