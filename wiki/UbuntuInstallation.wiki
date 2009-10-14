@@ -64,6 +64,8 @@ If you get an error about phtml files in your web browser, try
 $ sudo /etc/init.d/apache2 restart
 }}}
 
+If you have trouble restarting Apache, then look [http://mohamedaslam.com/how-to-fix-apache-could-not-reliably-determine-the-servers-fully-qualified-domain-name-using-127011-for-servername-error-on-ubuntu/ here] for a fix to a common problem:
+
 == Customising the site ==
 
 How to CustomiseYourSite - configuration, look and feel etc.
