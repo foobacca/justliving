@@ -4,11 +4,35 @@ Once you've played with the code, you'll want to make the site yours.
 
 == First steps - config.php ==
 
- Start with the config.php file and put in your city name ...
+ * Pick a domain name. Buy it!
+ * Edit config.php:
+  # Set the city name.
+  # Set email address.
+  # Set wiki location.
+  # Sort out paypal stuff.
 
-domain name
+== Sort out the text on various pages ==
+
+ * Edit other/dbcreate-categories.sql - You need to choose categories. Write introductions. Then run the following command (note that it deletes everything in your existing database!):
+{{{
+$ cd ~/justliving/
+$ mysql -p -u justliving justliving < other/dbcreate-sample.sql
+}}}
+ 
+ * Now edit the following files. This is just changing text:there is no computer coding here!
+  # httpdocs/stockists/index.php
+  # httpdocs/about.php
+  # httpdocs/resources/index.php
+  # httpdocs/getinvolved.php
+  # httpdocs/contact.php
+
+== The database ==
+
+ * Now start populating the database...
 
 == Look and feel - the CSS and logos ==
+
+ * You will want to adjust the .css so that the style is what you want.
 
 _The below needs to checked_
 
