@@ -35,6 +35,10 @@ if (request("submit","post"))
 	
 	elseif (request("delete","post"))
 		{
+
+		// Get vars
+		$id = request("id","post");
+
 		// Delete
 		$sql = "DELETE FROM comments WHERE id = $id";
 		$result = mysql_query($sql);
