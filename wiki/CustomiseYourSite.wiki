@@ -24,7 +24,7 @@ $ mysql -p -u justliving justliving < other/dbcreate-sample.sql
   # httpdocs/about.php
   # httpdocs/resources/index.php
   # httpdocs/getinvolved.php
-  # httpdocs/contact.php
+  # httpdocs/principles/index.php
 
 == The database ==
 
