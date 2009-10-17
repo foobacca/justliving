@@ -59,10 +59,11 @@ if ($myrow = mysql_fetch_array($result))
 	{
 	do 
 		{
-		print("<a href=\"view.php?id=" . $myrow["id"] . "&amp;cat=$cat_id\" class=\"block_link listing\">");
 		print("<h3 style=\"text-decoration: underline;\">" . clean_text($myrow["org_name"]) . "</h3>\n");
-		print("<p style=\"color: black; text-decoration: none;\">" . create_abstract($myrow["description"]) . "</p>\n");
-		print("</a>\n\n");
+		print("<p style=\"color: black; text-decoration: none;\">");
+		print("<a href=\"view.php?id=" . $myrow["id"] . "&amp;cat=$cat_id\" class=\"block_link listing\">");
+		print(create_abstract($myrow["description"]));
+		print("</a></p>\n\n");
 		} while ($myrow = mysql_fetch_array($result));
 	}
 	
