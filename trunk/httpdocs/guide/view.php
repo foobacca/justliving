@@ -20,7 +20,7 @@ if (request("submit_comment","post"))
 	$spam_check = request("scheck","post");
 	
 	// Get the cat, which is hidden
-	$cat_id = $subject = request("cat","post");
+	$cat_id = request("cat","post");
 	
 	// Check mandatory
 	if (!$comment)
@@ -195,7 +195,7 @@ else
 	if ($web_img)
 		{
 		list($width, $height, $type, $attr) = getimagesize("../imgs/listing_imgs/$web_img");
-		print("<img style=\"float: right; margin: 5px 0 10px 10px;\" src=\"/imgs/listing_imgs/$web_img\" $attr alt=\"$org_name Image\">");
+		print("<img style=\"float: right; margin: 5px 0 10px 10px;\" src=\"../imgs/listing_imgs/$web_img\" $attr alt=\"$org_name Image\">");
 		}
 		
 	// Org Name
@@ -321,7 +321,7 @@ else
 	</p>
 	
 	<p>
-	<label for="scheck">Please type 'no spam' in this field</label>
+	<label for="scheck"><strong>Please type 'no spam' in this field*<strong></label>
 	<input type="text" name="scheck" size="45" maxlength="100" id="scheck" />
 	</p>
 			
