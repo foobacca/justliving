@@ -20,9 +20,16 @@ $guide_subtitle = 'A proper positive guide to Cambridge';
 $default_page_title = "Just Living - A proper positive guide to Cambridge";
 
 $site_url = 'http://www.justliving.org.uk';
+
+# Email addresses 
+# organise email is the email list used by the collective
 $organise_email = 'organise@justliving.org.uk';
+
+# these two are 'From:' addresses used by mass mailouts
 $server_email = 'server@justliving.org.uk';
 $automail_email = 'automail@justliving.org.uk';
+
+# contact email address - used in emails and on the contact page
 $contact_email = 'info@justliving.org.uk';
 $contact_email_obfusticated = 'info [at] justliving [dot] org [dot] uk';
 
