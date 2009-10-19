@@ -49,8 +49,8 @@ Then the CSS and a few files that are very site specific
 $ cp httpdocs/css/website.css.sample httpdocs/css/website.css
 $ cp httpdocs/about.php.sample httpdocs/about.php
 $ cp httpdocs/getinvolved.php.sample httpdocs/getinvolved.php
-$ cp httpdocs/.php.sample httpdocs/.php
-$ cp httpdocs/.php.sample httpdocs/.php
+$ cp httpdocs/resources/index.php.sample httpdocs/resources/index.php
+$ cp httpdocs/principles/index.php.sample httpdocs/principles.php
 $ cp httpdocs/stockists/index.php.sample httpdocs/stockists/index.php
 }}}
 
@@ -88,7 +88,7 @@ $ chmod 777 listing_imgs
 
 == Customising the site ==
 
-How to CustomiseYourSite - configuration, look and feel etc.
+There is a separate page describing how to go about [CustomiseYourSite customising your site]  - configuration, look and feel etc.
 
 ==  how to set up passwords for the admin section. ==
 
