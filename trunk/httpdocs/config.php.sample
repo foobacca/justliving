@@ -26,6 +26,10 @@ $automail_email = 'automail@justliving.org.uk';
 $contact_email = 'info@justliving.org.uk';
 $contact_email_obfusticated = 'info [at] justliving [dot] org [dot] uk';
 
+# are you using the stockists page? If this is false, it will hide the link to 
+# the stockists page
+$using_stockists_page = true;
+
 # is wiki in use, and what is the url
 $wiki_in_use = true;
 $wiki_url = 'http://wiki.justliving.org.uk/';
