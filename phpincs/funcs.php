@@ -13,7 +13,7 @@ header("Content-Type: text/html; charset=UTF-8");
 function topbit($n = false, $page_title = "")
 	{
           # use these globals
-          global $app_path, $default_page_title, $city, $site_url, $guide_name;
+          global $app_path, $default_page_title, $city, $site_url, $guide_name, $using_stockists_page;
           if (strcmp($page_title, "") == 0)
             $page_title = $default_page_title;
 	?>
@@ -44,7 +44,9 @@ function topbit($n = false, $page_title = "")
 <div id="navcontainer">
 <ul id="navlist">
 <li><a href="<?php print $app_path; ?>" <?php if ($n == 2) {print("id=\"current\""); } ?>>View Guide</a></li>
+<?php if ($using_stockists_page) { ?>
 <li><a href="<?php print $app_path; ?>stockists/" <?php if ($n == 10) {print("id=\"current\""); } ?>>Stockists</a></li>
+<?php } ?>
 <li><a href="<?php print $app_path; ?>about.php" <?php if ($n == 5) {print("id=\"current\""); } ?>>About</a></li>
 <li><a href="<?php print $app_path; ?>principles/" <?php if ($n == 8) {print("id=\"current\""); } ?>>Principles</a></li>
 <li><a href="<?php print $app_path; ?>resources/" <?php if ($n == 7) {print("id=\"current\""); } ?>>Resources</a></li>
