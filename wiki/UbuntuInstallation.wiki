@@ -33,17 +33,28 @@ $ cd /var/www/
 $ sudo ln -s /home/user/justliving/httpdocs justliving
 }}}
 
-Then we need to set up some sample files to be the real files.
+Then we need to set up some sample files to be the real files. First the config files:
 
 {{{
 $ cd ~/justliving/
 $ cp httpdocs/config.php.sample httpdocs/config.php
-$ cp httpdocs/css/website.css.sample httpdocs/css/website.css
-$ cp httpdocs/stockists/index.php.sample httpdocs/stockists/index.php
 $ cp phpincs/dbconn.php.sample phpincs/dbconn.php
 }}}
 
-You should then edit those 4 files as necessary. The most important is phpincs/dbconn.php where you will have to set your database password.
+Edit those two as required - there are lots of comments in the files to help you work out what to do. phpincs/dbconn.php is where you will have to set your database password.
+
+Then the CSS and a few files that are very site specific
+
+{{{
+$ cp httpdocs/css/website.css.sample httpdocs/css/website.css
+$ cp httpdocs/about.php.sample httpdocs/about.php
+$ cp httpdocs/getinvolved.php.sample httpdocs/getinvolved.php
+$ cp httpdocs/.php.sample httpdocs/.php
+$ cp httpdocs/.php.sample httpdocs/.php
+$ cp httpdocs/stockists/index.php.sample httpdocs/stockists/index.php
+}}}
+
+You should then edit those files as necessary - basically just put the text in them that you want.
 
 You also need to create the initial database. Note there are 3 files in other/
 
