@@ -5,6 +5,8 @@ atopbit();
 
 <h1><a href="<?php print $app_path; ?>admin/">Just Living Admin</a> &gt; Categories</h1>
 
+<h2><a href="add.php">Add New Category</a></h2>
+
 <h2>Choose a category to edit:</h2>
 <ul>
 <?php
