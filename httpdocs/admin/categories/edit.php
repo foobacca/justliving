@@ -51,6 +51,8 @@ else
 		
 	</fieldset>
 	</form>
+
+        <p>You also <a href="delete.php?id=<?php print $id; ?>">delete this category</a>.</p>
 <?php
 	}
 	
