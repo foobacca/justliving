@@ -9,11 +9,12 @@ atopbit();
 if (request("submit","post"))
 	{
 	// Get vars
+        $name = request("name","post");
 	$introduction = request("introduction","post");
 	$id  = request("id","post");
 	
 	// Update
-	$sql = "UPDATE categories SET introduction = '$introduction' WHERE id = $id";
+	$sql = "UPDATE categories SET name = '$name', introduction = '$introduction' WHERE id = $id";
 	$result = mysql_query($sql);
 			
 	// Message
@@ -37,6 +38,9 @@ else
 	<p>
 	<input name="submit" type="hidden" value="submit" />
 	<input name="id" type="hidden" value="<?php print($id); ?>" />
+
+	<label for="name">Name</label>
+	<input type="text" name="name" id="name" value="<?php print($name); ?>" />
 
 	<label for="introduction">Introduction</label>
 	<textarea name="introduction" id="introduction" cols="60" rows="10"><?php print($introduction); ?></textarea>
