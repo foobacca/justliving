@@ -22,7 +22,18 @@ if (request("submit","post"))
 	print("<h2>Category Added</h2><p>Back to the <a href=\"index.php\">Categories List</a>.</p>");
 	}
 else
-	{ ?>
+	{ 
+        // get a default sequence number
+        $seq = 0;
+        $sql = "SELECT seq FROM categories ORDER BY seq DESC LIMIT 1";
+        $result = mysql_query($sql);
+        if ($myrow = mysql_fetch_array($result)) 
+        {
+          $seq = $myrow["seq"];
+          $seq += 10;
+        }
+        
+        ?>
 	<form method="post" action="add.php">
 		
 	<fieldset>
@@ -39,7 +50,7 @@ else
 	<span style="display: block; font-size: 0.9em; padding: 0 0 4px 0; width: 400px;">At the moment, this is inserted within paragraph tags. So you can only add HTML links and line breaks within the text will be line breaks on the website.</span>
 
 	<label for="seq">Sequence Number</label>
-	<input type="text" name="seq" id="seq"  />
+        <input type="text" name="seq" id="seq" value="<?php print $seq; ?>" />
 	<span style="display: block; font-size: 0.9em; padding: 0 0 4px 0; width: 400px;">This determines the order of categories.</span>
 	</p>
 	
