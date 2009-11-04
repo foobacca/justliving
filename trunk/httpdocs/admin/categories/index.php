@@ -21,7 +21,8 @@ if ($myrow = mysql_fetch_array($result))
 ?>
 </ul>
 
-<p>Categories are easily added / edited, but it's a bit of a  'geek job', so add suggested changes to a Just Living meeting agenda.</p>
+<h2><a href="order.php">Change the order of the categories</a></h2>
+
 
 <?php
 abotbit();
