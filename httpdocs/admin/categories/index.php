@@ -7,6 +7,8 @@ atopbit();
 
 <h2><a href="add.php">Add New Category</a></h2>
 
+<h2><a href="order.php">Change the order of the categories</a></h2>
+
 <h2>Choose a category to edit:</h2>
 <ul>
 <?php
@@ -21,7 +23,6 @@ if ($myrow = mysql_fetch_array($result))
 ?>
 </ul>
 
-<h2><a href="order.php">Change the order of the categories</a></h2>
 
 
 <?php
