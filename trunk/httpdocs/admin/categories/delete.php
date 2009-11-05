@@ -11,8 +11,12 @@ if (request("submit","post"))
 	// Get vars
 	$id  = request("id","post");
 	
-	// Update
+	// Delete the category
 	$sql = "DELETE FROM categories WHERE id = $id";
+	$result = mysql_query($sql);
+			
+	// Also delete the relevant items from the listings_categories table
+	$sql = "DELETE FROM listings_categories WHERE category_id = $id";
 	$result = mysql_query($sql);
 			
 	// Message
@@ -31,6 +35,25 @@ else
 		
 	<fieldset>
 	<legend>Delete Category: <?php print($name); ?></legend>
+
+        <?php
+        $query = "SELECT listing_id FROM listings_categories WHERE category_id = $id";
+        $result = mysql_query($query);
+        if ($myrow = mysql_fetch_array($result)) 
+        {
+          print ("<p>The $name category contains the following listings:</p><ul>");
+          do 
+          {
+            $listing_query = "SELECT org_name FROM listings WHERE id = " . 
+                $myrow["listing_id"];
+            $listing_result = mysql_query($listing_query);
+            $listing_row = mysql_fetch_array($listing_result);
+            print ("<li>" . $listing_row["org_name"] . "</li>");
+          } while ($myrow = mysql_fetch_array($result));
+          print ("</ul>");
+        } else {
+          print ("<p>The $name category contains no listings.</p>");
+        } ?>
 		
 	<p>
 	<input name="submit" type="hidden" value="submit" />
