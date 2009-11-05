@@ -29,7 +29,7 @@ if ($unchecked)
 ?> Edit or delete the listing additions.</p>
 
 <h3><a href="categories/">Manage Categories</a></h3>
-<p>Edit the introduction text that is displayed for each category.</p>
+<p>Add and delete categories, change the ordering, edit introductory text.</p>
 
 <h3><a href="news/">Manage News</a></h3>
 <p>Add, edit and delete news articles displayed on the <?php print $guide_name; ?> website.</p>
