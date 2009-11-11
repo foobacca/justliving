@@ -69,8 +69,6 @@ if ($myrow = mysql_fetch_array($result))
 	
 print("\n\n</div>\n\n");
 
-print("<ul>");
-
 // Print the category list
 print("<p class=\"center\">");
 jl_cat_list($cat_id);
