@@ -321,7 +321,7 @@ else
 	</p>
 	
 	<p>
-	<label for="scheck"><strong>Please type 'no spam' in this field*<strong></label>
+	<label for="scheck"><strong>Please type 'no spam' in this field*</strong></label>
 	<input type="text" name="scheck" size="45" maxlength="100" id="scheck" />
 	</p>
 			
