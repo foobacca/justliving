@@ -152,13 +152,6 @@ div.metalist {
 	color: #666;
 	text-align: center;
 }
-div.comment {
-	border: 1px solid #333;
-	background: #fff url("/imgs/strip_un.gif") top right no-repeat;
-	padding: 10px 40px 10px 10px;
-	margin: 0 0 15px 0;
-}
-
 
 
 
@@ -197,7 +190,7 @@ div.comment {
 }
 #page p.intro {
 	font-style: italic;
-	font-family: 1em Georgia, Times, serif;
+	font-family: Georgia, Times, serif;
 	letter-spacing: 1px;
 }
 .center {
