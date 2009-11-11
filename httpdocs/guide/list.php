@@ -75,7 +75,7 @@ jl_cat_list($cat_id);
 print("</p>\n");
 
 // Submit line
-print("<p class=\"center\" style=\"margin: 20px 0 0 0;\"><a href=\"submit.php\" class=\"submit\">Submit listing</a>\n");
+print("<p class=\"center\" style=\"margin: 20px 0 0 0;\"><a href=\"submit.php\" class=\"submit\">Submit listing</a></p>\n");
 
 botbit();
 ?>
