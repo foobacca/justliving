@@ -159,7 +159,7 @@ else
 	</p>
 	
 	<p>
-	<label for="contact"><strong>Listing category*</strong></label>
+	<label for="cat_id"><strong>Listing category*</strong></label>
 	<select id="cat_id" name="cat_id">
 	<option value="">Please select a category</option>
 	<?php
