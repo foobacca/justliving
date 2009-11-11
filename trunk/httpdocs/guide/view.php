@@ -133,7 +133,7 @@ else
 		}
 		
 	// Topbit
-	topbit(2, $org_name);
+	topbit(2, $org_name . " - Just Living Guide");
 	
 	// Page Title 
 	print("<h2 class=\"center\"><a href=\"list.php?cat_id=$cat_id\">$cat_name</a></h2>\n");
