@@ -33,7 +33,7 @@ function topbit($n = false, $page_title = "")
 <form method="get" action="http://www.google.co.uk/custom">
 <div id="search">
 <input type="hidden" name="sitesearch" value="<?php print $site_url; ?>" />
-<input type="hidden" name="domains" value="http://www." />
+<input type="hidden" name="domains" value="<?php print $site_url; ?>" />
 <input type="text" name="q" size="30" maxlength="255" style="margin: 0;" />
 <input type="submit" name="sa" value="Search" class="but" style="margin: 0 0 0 5px;" />
 </div>
