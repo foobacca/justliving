@@ -134,8 +134,9 @@ if (request("submit","post"))
 			{
 			do 
 				{
+                                $cat_x = request("cat_" . $myrow["id"], "post");
 				// Check to see if this cat is set to 'on', if so, add an entry into the database
-				if (isset(${"cat_" . $myrow["id"]}))      // == "on")
+                                if ($cat_x == "on")
 					{
 					mysql_query("INSERT INTO listings_categories (listing_id, category_id) VALUES ('$id', '" . $myrow["id"] . "')");
 					}
@@ -165,7 +166,8 @@ if (request("submit","post"))
 			do 
 				{
 				// Check to see if this cat is set to 'on', if so, add an entry into the database
-				if (isset(${"flag_" . $myrow["id"]})) // == "on")
+                                  $flag_x = request("flag_" . $myrow["id"], "post");
+                                  if ($flag_x == "on")
 					{
 					mysql_query("INSERT INTO listings_flags (listing_id, flag_id) VALUES ('$id', '" . $myrow["id"] . "')");
 					}
