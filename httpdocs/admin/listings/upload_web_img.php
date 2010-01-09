@@ -66,7 +66,7 @@ $uploaded==false;
 $password_form = request('password_form','POST');
 
 // Dont allow post if $password_form has been populated
-If($_POST['submit']==true AND $password_form != null) {
+If($_POST['submit']==true AND $password_form == null) {
 
 	For($i=0; $i <= $file_uploads-1; $i++) {
 					
