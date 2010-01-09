@@ -1,4 +1,4 @@
-<?
+<?php
 @(include("../../config.php")) OR die("Could not find config.php. Make sure you have copied config.php.sample to config.php");
 
 // Get the $id for the listing
@@ -159,7 +159,7 @@ If($_POST['submit']==true AND $password_form != null) {
 
 <h1><a href="<?php print $app_path; ?>admin/">Just Living Admin</a> &gt; <a href="index.php">Listings</a> &gt; <a href="edit.php?id=<?php print($id); ?>">Add / Edit</a> &gt; Upload Web Image</h1>
 
-<?
+<?php
 If($password_form)
 	{
 	Echo $password_form;
@@ -168,7 +168,7 @@ Elseif($uploaded==true)
 	{
 	?>
 	<h2>Your image has been uploaded.</h2>
-	<?
+	<?php
 	For($i=0; $i <= $file_uploads-1; $i++)
 		{
 		If($_FILES['file']['name'][$i])
@@ -193,29 +193,29 @@ else // UPLOAD FORM
 	If($display_message)
 		{
 		?>
-		<p><strong><?=$display_message;?></strong></p>
-		<?
+		<p><strong><?php print $display_message; ?></strong></p>
+		<?php
 		}
 	?>
 
-<form action="<?=$_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data" name="phuploader">
+<form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" name="phuploader">
 
 <fieldset>
 <legend>Upload Image</legend>
 
 <p>
-<strong>Allowed File Types:</strong> <?=$types?><br />
-<strong>Max size per file:</strong> <?=$max_file_size?>kb.<br />
+<strong>Allowed File Types:</strong> <?php print $types; ?><br />
+<strong>Max size per file:</strong> <?php print $max_file_size; ?>kb.<br />
 <strong>The file has no dimension restrictions, but we suggest a maximum or 300px wide by about 300px high.</strong>
 </p>
 		
-	<?
+	<?php
 	For($i=0;$i <= $file_uploads-1;$i++)
 		{
 		?>
 		<p><b>Select File:</b>
 		<input type="file" name="file[]" size="30" /></p>
-		<?
+		<?php
 		}
 	?>
 	
