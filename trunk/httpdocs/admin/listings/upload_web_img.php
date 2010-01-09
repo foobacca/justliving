@@ -63,8 +63,10 @@ $error="";
 $display_message="";
 $uploaded==false;
 
+$password_form = request('password_form','POST');
+
 // Dont allow post if $password_form has been populated
-If($_POST['submit']==true AND !$password_form) {
+If($_POST['submit']==true AND $password_form != null) {
 
 	For($i=0; $i <= $file_uploads-1; $i++) {
 					
@@ -185,7 +187,7 @@ Elseif($uploaded==true)
 	print("<p><strong><a href=\"edit.php?id=$id\">Back to editing the listing</a></strong></p>");
 
 	} 
-Else // UPLOAD FORM
+else // UPLOAD FORM
 	{
 
 	If($display_message)
