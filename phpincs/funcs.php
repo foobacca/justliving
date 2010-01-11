@@ -421,7 +421,7 @@ function atopbit()
           <script src="<?php print $app_path; ?>js/sorttable.js"></script>
 </head>
 <body>
-<p><a href="<?php print $app_path; ?>">Main Site</a></p>
+<p><a href="<?php print $app_path; ?>">Front Page of Site</a> | <a href="http://code.google.com/p/justliving/">Code Hosting</a> | <a href="http://code.google.com/p/justliving/issues/entry">Report bug</a></p>
 	<?php
 	}
 
