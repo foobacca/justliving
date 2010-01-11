@@ -263,7 +263,7 @@ else
 	if ($id)
 		{
 		?>
-	<div style="float: right;"><input type="submit" name="update" class="submit" value="Update Listing" /> <input type="submit" name="delete" class="submit" value="Delete Listing" /></div>
+	<div style="float: right;"><input type="submit" name="update" class="submit" value="Update Listing" /> </div>
 		<?php
 		}
 	else
@@ -511,7 +511,11 @@ else
 	if ($id)
 		{
 		?>
-	<input type="submit" name="update" class="submit" value="Update Listing" /> <input type="submit" name="delete" class="submit" value="Delete Listing" />
+        <input type="submit" name="update" class="submit" value="Update Listing" /> 
+        </fieldset>
+        <fieldset>
+        <legend>Delete Listing</legend>
+        <input type="submit" name="delete" class="submit" value="Delete Listing" />
 		<?php
 		}
 	else
