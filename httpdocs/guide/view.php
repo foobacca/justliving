@@ -290,7 +290,7 @@ else
 	<li>If you think we're missing details or this listing is incorrect, please let us know.</li>
 	<li>Your email address will not be public, we may use it to contact you about the addition.</li>
 	<li>Mandatory fields are in bold and marked with an asterix*.</li>
-	<li><strong>Please note. You are about to contact the <?php print $guide_name; ?> team NOT the organisation listed above.</strong></li>
+        <li><strong>Please note</strong> - this is the <?php print $guide_name; ?> directory website, not the website for <?php print $org_name; ?>. <strong>If you use this form you will be contacting <?php print $guide_name; ?>, not <?php print $org_name; ?></strong>. If you want to contact <?php print $org_name; ?>, look at the contact details above.</li>
 	</ul>
 	
 	<p>
