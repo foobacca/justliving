@@ -6,6 +6,7 @@ $id = request("id");
 
 // Always got an $id
 if (!$id){die();}
+settype($id, 'integer');
 
 // Has the user just submitted a comment?
 if (request("submit_comment","post"))
@@ -118,6 +119,7 @@ else
 		
 	// Cat id in GET 
 	$cat_id = request("cat","get");
+        settype ($cat_id, 'integer');
 	
 	// If not cat_id, use the main print category id
 	if (!$cat_id)

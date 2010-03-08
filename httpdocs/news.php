@@ -28,6 +28,7 @@ if (!$id)
 	}
 else
 	{
+        settype ($id, 'integer');
 	$result = mysql_query("SELECT headline, date, article FROM news WHERE id = $id"); 
 	if ($myrow = mysql_fetch_array($result)) 
 		{

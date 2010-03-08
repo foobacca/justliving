@@ -4,6 +4,7 @@
 // Category listing
 if ($cat_id = request("cat_id","get"))
 	{
+        settype($cat_id, 'integer');  # protect against sql injection
 	$result = mysql_query("SELECT name, introduction FROM categories WHERE id = $cat_id");
 	if ($myrow = mysql_fetch_array($result)) 
 		{
