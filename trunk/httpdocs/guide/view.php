@@ -67,7 +67,7 @@ if (request("submit_comment","post"))
 		$headers .= "Return-Path: " . $replyemail . "\r\n";
 		
 		// Format the body of the email
-		$themessage = "A new addition has been posted, check it out at:\n" . $site_url . $app_path . "admin/additions/edit.php?id=$id\n\nText: $comment\n$Submit Name: $submit_name\nSubmit Email: $submit_email\n\n---\nAutoMail from $guide_name";
+		$themessage = "A new addition has been posted, check it out at:\n" . $site_url . $app_path . "admin/additions/edit.php?id=$id\n\nText: $comment\nSubmit Name: $submit_name\nSubmit Email: $submit_email\n\n---\nAutoMail from $guide_name";
 		
 		// Send
 		mail("$organise_email","$thesubject","$themessage","$headers");
