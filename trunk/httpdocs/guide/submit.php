@@ -22,7 +22,7 @@ if (request("submit"))
 	$submit_email = clean_input($submit_email);
 	$subject = clean_input($subject);
 	$cat_id = clean_input($cat_id);
-        settype($cat_id, 'integer');
+        settype($cat_id, 'integer');    // make sure no sql was added
 	$org_name = clean_input($org_name);
 	$description = clean_input($description);
 	$website = clean_input($website);
