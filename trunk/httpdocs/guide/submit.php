@@ -22,6 +22,7 @@ if (request("submit"))
 	$submit_email = clean_input($submit_email);
 	$subject = clean_input($subject);
 	$cat_id = clean_input($cat_id);
+        settype($cat_id, 'integer');
 	$org_name = clean_input($org_name);
 	$description = clean_input($description);
 	$website = clean_input($website);
@@ -60,7 +61,7 @@ if (request("submit"))
 		// Insert into Data
 		$now = time();
 		$sql = "INSERT INTO listings (add_ts, edit_ts, submit_name, submit_email, cat_id, org_name, description, website, email, phone, address, postcode) VALUES ('$now','$now','$submit_name','$submit_email','$cat_id','$org_name','$description','$website','$email','$phone','$address','$postcode')";
-		mysql_query($sql);
+		mysql_query(mysql_real_escape_string($sql));
 		$id = mysql_insert_id();
 		
 		// Insert into the web categories table
@@ -87,7 +88,7 @@ if (request("submit"))
 		$headers .= "Return-Path: " . $replyemail . "\r\n";
 		
 		// Format the body of the email
-		$themessage = "A new listing has been added, check it out at:\n" . $guide_url . $app_path . "admin/listings/edit.php?id=" . $id . "\n\nOrganisation Name: " . $org_name . "\nCategory: " . $cat . "\nDescription: " . $description . "\n\n---\nAutoMail from " . $guide_name;
+		$themessage = "A new listing has been added, check it out at:\n" . $site_url . $app_path . "admin/listings/edit.php?id=" . $id . "\n\nOrganisation Name: " . $org_name . "\nCategory: " . $cat . "\nDescription: " . $description . "\n\n---\nAutoMail from " . $guide_name;
 		
 		// Send
 		if ($id)
