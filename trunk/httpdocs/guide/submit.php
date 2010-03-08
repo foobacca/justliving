@@ -22,7 +22,6 @@ if (request("submit"))
 	$submit_email = clean_input($submit_email);
 	$subject = clean_input($subject);
 	$cat_id = clean_input($cat_id);
-        settype($cat_id, 'integer');    // make sure no sql was added
 	$org_name = clean_input($org_name);
 	$description = clean_input($description);
 	$website = clean_input($website);
@@ -60,8 +59,19 @@ if (request("submit"))
 		{
 		// Insert into Data
 		$now = time();
-		$sql = "INSERT INTO listings (add_ts, edit_ts, submit_name, submit_email, cat_id, org_name, description, website, email, phone, address, postcode) VALUES ('$now','$now','$submit_name','$submit_email','$cat_id','$org_name','$description','$website','$email','$phone','$address','$postcode')";
-		mysql_query(mysql_real_escape_string($sql));
+                settype($cat_id, 'integer');    // make sure no sql was added
+                $sql = "INSERT INTO listings (add_ts, edit_ts, submit_name, submit_email, cat_id, org_name, description, website, email, phone, address, postcode) " .
+                  "VALUES ('$now','$now','" . 
+                  mysql_real_escape_string($submit_name) . "','" .
+                  mysql_real_escape_string($submit_email) . "','" . $cat_id . "','" .
+                  mysql_real_escape_string($org_name) . "','" .
+                  mysql_real_escape_string($description) . "','" .
+                  mysql_real_escape_string($website) . "','" .
+                  mysql_real_escape_string($email) . "','" .
+                  mysql_real_escape_string($phone) . "','" .
+                  mysql_real_escape_string($address) . "','" .
+                  mysql_real_escape_string($postcode) . "')";
+		mysql_query($sql);
 		$id = mysql_insert_id();
 		
 		// Insert into the web categories table

@@ -53,7 +53,10 @@ if (request("submit_comment","post"))
 	
 		// Insert
 		$now = time();
-		$sql = "INSERT INTO comments (add_ts, edit_ts, listing_id, comment, submit_name, submit_email) VALUES ('$now', '$now','$id','$comment','$submit_name','$submit_email')";
+                $sql = "INSERT INTO comments (add_ts, edit_ts, listing_id, comment, submit_name, submit_email) VALUES " . 
+                  "('$now', '$now','$id','" . mysql_real_escape_string($comment) . 
+                  "','" . mysql_real_escape_string($submit_name) . 
+                  "','" . mysql_real_escape_string($submit_email) . "')";
 		$result = mysql_query($sql);
 		$id = mysql_insert_id();
 		
@@ -97,10 +100,10 @@ else
 	// ------- //
 	
 	// Add a 'view'
-	mysql_query("UPDATE listings SET views = (views + 1) WHERE id = $id");
+	mysql_query("UPDATE listings SET views = (views + 1) WHERE id = '$id'");
 		
 	// Get the details
-	$result = mysql_query("SELECT add_ts, edit_ts, org_name, cat_id, address, postcode, email, website, phone, description, state, web_img FROM listings WHERE id = $id");
+	$result = mysql_query("SELECT add_ts, edit_ts, org_name, cat_id, address, postcode, email, website, phone, description, state, web_img FROM listings WHERE id = '$id'");
 	if ($myrow = mysql_fetch_array($result)) 
 		{
 		$add_ts = $myrow["add_ts"];
@@ -128,7 +131,7 @@ else
 		}
 	
 	// Get the category name
-	$result = mysql_query("SELECT name FROM categories WHERE id = $cat_id");
+	$result = mysql_query("SELECT name FROM categories WHERE id = '$cat_id'");
 	if ($myrow = mysql_fetch_array($result)) 
 		{
 		$cat_name = $myrow["name"];
@@ -141,7 +144,7 @@ else
 	print("<h2 class=\"center\"><a href=\"list.php?cat_id=$cat_id\">$cat_name</a></h2>\n");
 
 	// Previous / next links
-	$sql = "SELECT l.id FROM listings l, listings_categories lc WHERE l.id = lc.listing_id AND (l.state = 'justliving' OR l.state = 'signed off') AND lc.category_id = $cat_id ORDER BY l.org_name";
+	$sql = "SELECT l.id FROM listings l, listings_categories lc WHERE l.id = lc.listing_id AND (l.state = 'justliving' OR l.state = 'signed off') AND lc.category_id = '$cat_id' ORDER BY l.org_name";
 	$result = mysql_query($sql);
         $pre_id = null;
 	if ($myrow = mysql_fetch_array($result)) 
@@ -261,7 +264,7 @@ else
 	// --------- //
 	// ADDITIONS //
 	// --------- //
-	$sql = "SELECT add_ts, title, comment, submit_name FROM comments WHERE listing_id = $id AND state = 'checked' ORDER BY add_ts";
+	$sql = "SELECT add_ts, title, comment, submit_name FROM comments WHERE listing_id = '$id' AND state = 'checked' ORDER BY add_ts";
 	$result = mysql_query($sql);
 	if ($myrow = mysql_fetch_array($result)) 
 		{
