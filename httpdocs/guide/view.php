@@ -6,7 +6,7 @@ $id = request("id");
 
 // Always got an $id
 if (!$id){die();}
-settype($id, 'integer');
+settype($id, 'integer'); # make sure it is just an integer - stop sql injection
 
 // Has the user just submitted a comment?
 if (request("submit_comment","post"))

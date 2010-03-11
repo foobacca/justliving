@@ -71,6 +71,7 @@ foreach ($latest as $key=>$value)
 	// Split the value into id and type
 	$pieces = explode("-", $key);
 	$id = $pieces[0];
+        settype ($id, 'integer');
 	$type = $pieces[1];
 	
 	print("<p>");
@@ -93,7 +94,7 @@ foreach ($latest as $key=>$value)
 	// Get the relevant details and print
 	if ($type == "add")
 		{
-		$result = mysql_query("SELECT org_name, cat_id FROM listings WHERE id = $id");
+		$result = mysql_query("SELECT org_name, cat_id FROM listings WHERE id = '$id'");
 		if ($myrow = mysql_fetch_array($result)) 
 			{
 			print("<a href=\"{$app_path}guide/view.php?id=" . $id . "&amp;cat=" . $myrow["cat_id"] . "\">" . $myrow["org_name"] . "</a></p>\n");
@@ -102,7 +103,7 @@ foreach ($latest as $key=>$value)
 		}
 	elseif ($type == "edit")
 		{
-		$result = mysql_query("SELECT org_name, cat_id FROM listings WHERE id = $id");
+		$result = mysql_query("SELECT org_name, cat_id FROM listings WHERE id = '$id'");
 		if ($myrow = mysql_fetch_array($result)) 
 			{
 			print("<a href=\"{$app_path}guide/view.php?id=" . $id . "&amp;cat=" . $myrow["cat_id"] . "\">" . $myrow["org_name"] . "</a></p>\n");
@@ -111,7 +112,7 @@ foreach ($latest as $key=>$value)
 		}
 	elseif ($type == "news")
 		{
-		$result = mysql_query("SELECT headline FROM news WHERE id = $id"); 
+		$result = mysql_query("SELECT headline FROM news WHERE id = '$id'"); 
 		if ($myrow = mysql_fetch_array($result)) 
 			{
 			print("<a href=\"{$app_path}news.php?id=" . $id . "\">" . htmlentities($myrow["headline"]) . "</a></p>\n");
