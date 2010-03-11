@@ -5,7 +5,7 @@
 if ($cat_id = request("cat_id","get"))
 	{
         settype($cat_id, 'integer');  # protect against sql injection
-	$result = mysql_query("SELECT name, introduction FROM categories WHERE id = $cat_id");
+	$result = mysql_query("SELECT name, introduction FROM categories WHERE id = '$cat_id'");
 	if ($myrow = mysql_fetch_array($result)) 
 		{
 		$cat_name = $myrow["name"];
@@ -16,7 +16,7 @@ if ($cat_id = request("cat_id","get"))
 	topbit(2, $guide_name ." - " . $cat_name);
 	
 	// Get all listing for a cat
-	$sql = "SELECT l.id, l.org_name, l.description FROM listings l, listings_categories lc WHERE l.id = lc.listing_id AND (l.state = 'justliving' OR l.state = 'signed off') AND lc.category_id = $cat_id ORDER BY l.org_name";
+	$sql = "SELECT l.id, l.org_name, l.description FROM listings l, listings_categories lc WHERE l.id = lc.listing_id AND (l.state = 'justliving' OR l.state = 'signed off') AND lc.category_id = '$cat_id' ORDER BY l.org_name";
 	}
 	
 // Is it 'most recent' listing?

@@ -209,11 +209,11 @@ function request($var, $rtype = "", $allowhtml = false)
 		// if magic quotes, return data as is, otherwise add slashes
 		if (get_magic_quotes_gpc()==1)
 			{
-			return $data;
+			return stripslashes($data);
 			}
 		else
 			{
-			return addslashes($data);
+			return $data;
 			}
 		}
 	}

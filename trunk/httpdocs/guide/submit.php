@@ -80,7 +80,7 @@ if (request("submit"))
 		// Get cat name for 'admin email'
 		if ($cat_id)
 			{
-			$result = mysql_query("SELECT name FROM categories WHERE id = $cat_id"); 
+			$result = mysql_query("SELECT name FROM categories WHERE id = '$cat_id'"); 
 			if ($myrow = mysql_fetch_array($result)) 
 				{
 				$cat = $myrow["name"];
