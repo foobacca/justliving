@@ -16,6 +16,7 @@ if (request("submit","post"))
 		
 		// Get vars
 		$id = request("id","post");
+                settype($id, "integer");
 		$comment = request("comment","post");
 		$submit_name = request("submit_name","post");
 		$submit_email = request("submit_email","post");
@@ -24,7 +25,13 @@ if (request("submit","post"))
 		
 		// Update
 		$now = time();
-		$sql = "UPDATE comments SET edit_ts = '$now', comment = '$comment', submit_name = '$submit_name', submit_email = '$submit_email', notes = '$notes', state = '$state' WHERE id = $id";
+                $sql = "UPDATE comments SET edit_ts = '$now', " . 
+                  "comment = '" . mysql_real_escape_string($comment) . "', " . 
+                  "submit_name = '" . mysql_real_escape_string($submit_name) . "', " . 
+                  "submit_email = '" . mysql_real_escape_string($submit_email) . "', " . 
+                  "notes = '" . mysql_real_escape_string($notes) . "', " . 
+                  "state = '$state' " .
+                  " WHERE id = $id";
 		$result = mysql_query($sql);
 	
 		// Message

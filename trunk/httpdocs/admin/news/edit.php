@@ -13,6 +13,7 @@ if (request("submit","post"))
 	{
 	// Get vars
 	$id = request("id","post");
+        settype($id, "integer");
 	$headline = request("headline","post");
 	$date = request("date","post");
 	$article = request("article","post");
@@ -32,7 +33,10 @@ if (request("submit","post"))
 		
 		// Insert
 		$now = time();
-		$sql = "INSERT INTO news (headline, date, article) VALUES ('$headline', '$date','$article')";
+                $sql = "INSERT INTO news (headline, date, article) VALUES ('" . 
+                  mysql_real_escape_string($headline) . "', '" .
+                  mysql_real_escape_string($date) . "','" .
+                  mysql_real_escape_string($article) . "')";
 		$result = mysql_query($sql);
 		
 		// Message
@@ -55,7 +59,11 @@ if (request("submit","post"))
 		
 		// Update
 		$now = time();
-		$sql = "UPDATE news SET headline = '$headline', date = '$date', article = '$article' WHERE id = $id";
+                $sql = "UPDATE news SET " . 
+                  "headline = '" . mysql_real_escape_string($headline) . "', " . 
+                  "date = '" . mysql_real_escape_string($date) . "', " . 
+                  "article = '" . mysql_real_escape_string($article) . "'" . 
+                  " WHERE id = $id";
 		$result = mysql_query($sql);
 	
 		// Message
@@ -78,6 +86,7 @@ else
 	{
 	if ($id = request("id","get"))
 		{
+                settype($id, "integer");
 		$result = mysql_query("SELECT * FROM news WHERE id = $id"); 
 		if ($myrow = mysql_fetch_array($result)) 
 			{
