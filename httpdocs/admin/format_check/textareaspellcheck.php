@@ -24,6 +24,7 @@ if (request("update","post"))
 		{
 		// Get the details for one listing
 		$id = request("id_$n","post");
+                settype($id, 'integer');
 		$description = request("description_$n","post");
 		
 		// Debug
@@ -31,7 +32,7 @@ if (request("update","post"))
 		print("$id. ");
 		
 		// Update the listing...
-		$sql = "UPDATE listings SET description = '$description' WHERE id = $id";
+		$sql = "UPDATE listings SET description = '$description' WHERE id = '$id'";
 		$result = mysql_query($sql);
 		
 		$n++;
