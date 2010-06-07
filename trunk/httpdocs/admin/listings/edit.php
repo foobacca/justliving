@@ -24,6 +24,7 @@ if (request("submit","post"))
 	{
 	// Get vars
 	$id = request("id","post");
+        settype ($id, "integer");
 	$cat_id = request("cat_id","post");
 	$org_name = request("org_name","post");
 	$address = request("address","post");
@@ -122,7 +123,21 @@ if (request("submit","post"))
 			
 		// Update
 		$now = time();
-		$sql = "UPDATE listings SET edit_ts = '$now', cat_id = '$cat_id', org_name = '$org_name', address = '$address', postcode = '$postcode', email = '$email', website = '$website', phone = '$phone', description = '$description', state = '$state', submit_name = '$submit_name', submit_email = '$submit_email', notes = '$notes', welcome_email_sent = '$welcome_email_sent' WHERE id = $id";
+                $sql = "UPDATE listings SET " . 
+                  "edit_ts = '$now', " . 
+                  "cat_id = '$cat_id', " . 
+                  "org_name = '" . mysql_real_escape_string($org_name) . "', " . 
+                  "address = '" . mysql_real_escape_string($address) . "', " . 
+                  "postcode = '" . mysql_real_escape_string($postcode) . "', " . 
+                  "email = '" . mysql_real_escape_string($email) . "', " . 
+                  "website = '" . mysql_real_escape_string($website) . "', " . 
+                  "phone = '" . mysql_real_escape_string($phone) . "', " . 
+                  "description = '" . mysql_real_escape_string($description) . "', " . 
+                  "state = '" . mysql_real_escape_string($state) . "', " . 
+                  "submit_name = '" . mysql_real_escape_string($submit_name) . "', " . 
+                  "submit_email = '" . mysql_real_escape_string($submit_email) . "', " . 
+                  "notes = '" . mysql_real_escape_string($notes) . "', " . 
+                  "welcome_email_sent = '$welcome_email_sent' WHERE id = '$id'";
 		$result = mysql_query($sql);
 		
 		// Deal with multiple categories
@@ -204,7 +219,7 @@ else
 	
 	if ($id = request("id","get"))
 		{
-		$result = mysql_query("SELECT * FROM listings WHERE id = $id"); 
+		$result = mysql_query("SELECT * FROM listings WHERE id = '$id'"); 
 		if ($myrow = mysql_fetch_array($result)) 
 			{
 			$id = $myrow["id"];
