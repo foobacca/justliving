@@ -51,7 +51,19 @@ if (request("submit","post"))
 		
 		// Insert
 		$now = time();
-		$sql = "INSERT INTO listings (add_ts, edit_ts, cat_id, org_name, address, postcode, email, website, phone, description, state, submit_name, submit_email, notes, welcome_email_sent) VALUES ('$now', '$now','$cat_id','$org_name','$address','$postcode','$email','$website','$phone','$description','$state','$submit_name','$submit_email','$notes','n')";
+                $sql = "INSERT INTO listings (add_ts, edit_ts, cat_id, org_name, address, postcode, email, website, phone, description, state, submit_name, submit_email, notes, welcome_email_sent) " .
+                  "VALUES ('$now','$now','" .  $cat_id . "','" .
+                  mysql_real_escape_string($org_name) . "','" .
+                  mysql_real_escape_string($address) . "','" .
+                  mysql_real_escape_string($postcode) . "','" .
+                  mysql_real_escape_string($email) . "','" .
+                  mysql_real_escape_string($website) . "','" .
+                  mysql_real_escape_string($phone) . "','" .
+                  mysql_real_escape_string($description) . "','" .
+                  mysql_real_escape_string($state) . "','" .
+                  mysql_real_escape_string($submit_name) . "','" .
+                  mysql_real_escape_string($submit_email) . "','" . 
+                  mysql_real_escape_string($notes) . "','n')";
 		$result = mysql_query($sql);
 		$id = mysql_insert_id();
 		
