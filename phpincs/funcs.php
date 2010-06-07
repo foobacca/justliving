@@ -225,7 +225,9 @@ function request($var, $rtype = "", $allowhtml = false)
 // Clean any form input strings
 function clean_input($str)
 	{
-	return(showtextintags(escapeshellcmd(trim($str))));
+          // it was return(showtextintags(escapeshellcmd(trim($str))));
+          // but the escapeshellcmd was adding unnecessary backslashes
+	return(showtextintags(trim($str)));
 	}
 
 // Alternative strip tags function, leaves the text in the tags
