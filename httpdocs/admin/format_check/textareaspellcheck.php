@@ -32,7 +32,7 @@ if (request("update","post"))
 		print("$id. ");
 		
 		// Update the listing...
-		$sql = "UPDATE listings SET description = '$description' WHERE id = '$id'";
+		$sql = "UPDATE listings SET description = '" . mysql_real_escape_string($description) . "' WHERE id = '$id'";
 		$result = mysql_query($sql);
 		
 		$n++;
