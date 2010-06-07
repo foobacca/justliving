@@ -63,7 +63,8 @@ if (request("submit"))
                 $sql = "INSERT INTO listings (add_ts, edit_ts, submit_name, submit_email, cat_id, org_name, description, website, email, phone, address, postcode) " .
                   "VALUES ('$now','$now','" . 
                   mysql_real_escape_string($submit_name) . "','" .
-                  mysql_real_escape_string($submit_email) . "','" . $cat_id . "','" .
+                  mysql_real_escape_string($submit_email) . "','" . 
+                  $cat_id . "','" .
                   mysql_real_escape_string($org_name) . "','" .
                   mysql_real_escape_string($description) . "','" .
                   mysql_real_escape_string($website) . "','" .
