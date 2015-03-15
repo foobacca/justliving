@@ -1,0 +1,107 @@
+# Introduction #
+
+This guide is for how to set up the justliving code on Ubuntu. This is based on Ubuntu 8.04 (Hardy) but should work on any later version. It starts from a fresh install.
+
+# Details #
+
+First install the required packages:
+
+```
+$ sudo aptitude install apache2 php5 libapache2-mod-php5 mysql-server mysql-client php5-mysql subversion
+```
+
+You will be asked to set the root password for mysql. After this command, you should create the justliving database in mysql.
+
+_This should eventually be replaced by a script._
+
+```
+$ mysql -u root -p
+Enter password:
+mysql> create database justliving;
+mysql> grant all privileges on justliving.* to 'justliving'@'localhost' identified by 'password';
+mysql> quit
+```
+
+Next download the justliving code. For this example we'll use the home directory - /home/user - and link to it from the web root (/var/www)
+
+```
+$ cd
+$ svn checkout http://justliving.googlecode.com/svn/trunk/ justliving
+$ cd /var/www/
+$ sudo ln -s /home/user/justliving/httpdocs justliving
+```
+
+Then we need to set up some sample files to be the real files. First the config files:
+
+```
+$ cd ~/justliving/
+$ cp httpdocs/config.php.sample httpdocs/config.php
+$ cp phpincs/dbconn.php.sample phpincs/dbconn.php
+```
+
+Edit those two as required - there are lots of comments in the files to help you work out what to do. phpincs/dbconn.php is where you will have to set your database password.
+
+Then the CSS and a few files that are very site specific
+
+```
+$ cp httpdocs/css/website.css.sample httpdocs/css/website.css
+$ cp httpdocs/about.php.sample httpdocs/about.php
+$ cp httpdocs/getinvolved.php.sample httpdocs/getinvolved.php
+$ cp httpdocs/resources/index.php.sample httpdocs/resources/index.php
+$ cp httpdocs/principles/index.php.sample httpdocs/principles.php
+$ cp httpdocs/stockists/index.php.sample httpdocs/stockists/index.php
+```
+
+You should then edit those files as necessary - basically just put the text in them that you want.
+
+You also need to create the initial database. Note there are 3 files in other/
+
+  * dbcreate-base.sql creates the tables in the database but leaves them empty, apart from the flags table which has standard values. It will delete all existing data in the tables.
+  * dbcreate-categories.sql creates the tables in the database but leaves them empty, apart from the flags table (as above) and the categories table has the categories from the Cambridge site. It will delete all pre-existing data in the tables.
+  * dbcreate-sample.sql creates the tables in the database and puts lots of data in so you can play with the website properly. The email addresses and other personal info is made up. It will delete all pre-existing data in the tables.
+
+```
+$ cd ~/justliving/
+$ mysql -p -u justliving justliving < other/dbcreate-sample.sql
+```
+
+You should then be able to go to your web browser and enter http://localhost/justliving/ and see the site :) (or http://yoursite.com/justliving/ if the web browser is not on the same computer as the web server).
+
+If you get an error about phtml files in your web browser, try
+
+```
+$ sudo /etc/init.d/apache2 restart
+```
+
+If you have trouble restarting Apache, then look [here](http://mohamedaslam.com/how-to-fix-apache-could-not-reliably-determine-the-servers-fully-qualified-domain-name-using-127011-for-servername-error-on-ubuntu/) for a fix to a common problem:
+
+## Images ##
+
+Including images in the web guide is still being developed. Currently images can be added through the admin interface. To make sure that this works properly, some permissions need to be set:
+
+```
+$ cd ~/justliving/httpdocs/imgs/
+$ chmod 777 listing_imgs
+```
+
+## Customising the site ##
+
+There is a separate page describing how to go about [customising your site](CustomiseYourSite.md)  - configuration, look and feel etc.
+
+## how to set up passwords for the admin section. ##
+
+This requires webserver set up.
+
+If you have full control of your web server, you need to set up access control **todo**.
+
+If you are on a shared server, you need to [set up htaccess and htpasswd files](http://www.elated.com/articles/password-protecting-your-pages-with-htaccess/) or see if there is something in the server management web interface for managing this.
+
+## setting up the site with multiple domains ##
+
+This requires web server set up.
+
+If you have full control of your web server, you need to set up Virtual Hosts - for now, google for it.
+
+If you are on a shared server, there is probably a web interface to manage this. The details will depend on your provider.
+
+Basically just need to find good guides on the web and link to them.

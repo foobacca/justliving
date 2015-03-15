@@ -1,0 +1,20 @@
+If using a new ubuntu install, see UbuntuInstallation .
+
+# Requirements #
+
+  * MySQL (Developed on version 3.23.58)
+  * PHP (Developed on version 4.3.7)
+
+# Method #
+
+  * [Checkout the code](http://code.google.com/p/justliving/source/checkout) (see [these instructions](http://stackoverflow.com/questions/41766/how-do-i-download-code-using-svn-tortoise-from-google-code) for using tortoisesvn
+  * copy config.php.sample to config.php and edit as appropriate
+  * move funcs.php to somewhere on the server outside of the public html path, and change the path in the config.php file to point to it.
+  * set up the database tables
+  * start adding content :)
+
+# Optional Software #
+
+  * PhpMyAdmin
+  * PmWiki
+  * AwStats
